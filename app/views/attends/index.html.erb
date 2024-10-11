@@ -1,0 +1,63 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Attends</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Input</th>
+      <th>Hr attend1</th>
+      <th>Hr attend2</th>
+      <th>Attend1</th>
+      <th>Attend2</th>
+      <th>Attend3</th>
+      <th>Attend4</th>
+      <th>Attend5</th>
+      <th>Attend6</th>
+      <th>Attend7</th>
+      <th>Hr comment1</th>
+      <th>Hr comment2</th>
+      <th>Comment1</th>
+      <th>Comment2</th>
+      <th>Comment3</th>
+      <th>Comment4</th>
+      <th>Comment5</th>
+      <th>Comment6</th>
+      <th>Comment7</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @attends.each do |attend| %>
+      <tr>
+        <td><%= attend.input %></td>
+        <td><%= attend.hr_attend1 %></td>
+        <td><%= attend.hr_attend2 %></td>
+        <td><%= attend.attend1 %></td>
+        <td><%= attend.attend2 %></td>
+        <td><%= attend.attend3 %></td>
+        <td><%= attend.attend4 %></td>
+        <td><%= attend.attend5 %></td>
+        <td><%= attend.attend6 %></td>
+        <td><%= attend.attend7 %></td>
+        <td><%= attend.hr_comment1 %></td>
+        <td><%= attend.hr_comment2 %></td>
+        <td><%= attend.comment1 %></td>
+        <td><%= attend.comment2 %></td>
+        <td><%= attend.comment3 %></td>
+        <td><%= attend.comment4 %></td>
+        <td><%= attend.comment5 %></td>
+        <td><%= attend.comment6 %></td>
+        <td><%= attend.comment7 %></td>
+        <td><%= link_to 'Show', attend %></td>
+        <td><%= link_to 'Edit', edit_attend_path(attend) %></td>
+        <td><%= link_to 'Destroy', attend, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Attend', new_attend_path %>

@@ -1,0 +1,43 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  input: 2024-10-11
+  hr_attend1: false
+  hr_attend2: false
+  attend1: false
+  attend2: false
+  attend3: false
+  attend4: false
+  attend5: false
+  attend6: false
+  attend7: false
+  hr_comment1: MyString
+  hr_comment2: MyString
+  comment1: MyString
+  comment2: MyString
+  comment3: MyString
+  comment4: MyString
+  comment5: MyString
+  comment6: MyString
+  comment7: MyString
+
+two:
+  input: 2024-10-11
+  hr_attend1: false
+  hr_attend2: false
+  attend1: false
+  attend2: false
+  attend3: false
+  attend4: false
+  attend5: false
+  attend6: false
+  attend7: false
+  hr_comment1: MyString
+  hr_comment2: MyString
+  comment1: MyString
+  comment2: MyString
+  comment3: MyString
+  comment4: MyString
+  comment5: MyString
+  comment6: MyString
+  comment7: MyString

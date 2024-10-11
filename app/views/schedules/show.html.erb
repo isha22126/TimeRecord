@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Input:</strong>
+  <%= @schedule.input %>
+</p>
+
+<p>
+  <strong>Start:</strong>
+  <%= @schedule.start %>
+</p>
+
+<p>
+  <strong>Finish:</strong>
+  <%= @schedule.finish %>
+</p>
+
+<%= link_to 'Edit', edit_schedule_path(@schedule) %> |
+<%= link_to 'Back', schedules_path %>

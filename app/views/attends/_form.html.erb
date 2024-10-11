@@ -1,0 +1,112 @@
+<%= form_with(model: attend) do |form| %>
+  <% if attend.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(attend.errors.count, "error") %> prohibited this attend from being saved:</h2>
+
+      <ul>
+        <% attend.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :input %>
+    <%= form.date_select :input %>
+  </div>
+
+  <div class="field">
+    <%= form.label :hr_attend1 %>
+    <%= form.check_box :hr_attend1 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :hr_attend2 %>
+    <%= form.check_box :hr_attend2 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :attend1 %>
+    <%= form.check_box :attend1 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :attend2 %>
+    <%= form.check_box :attend2 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :attend3 %>
+    <%= form.check_box :attend3 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :attend4 %>
+    <%= form.check_box :attend4 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :attend5 %>
+    <%= form.check_box :attend5 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :attend6 %>
+    <%= form.check_box :attend6 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :attend7 %>
+    <%= form.check_box :attend7 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :hr_comment1 %>
+    <%= form.text_field :hr_comment1 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :hr_comment2 %>
+    <%= form.text_field :hr_comment2 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :comment1 %>
+    <%= form.text_field :comment1 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :comment2 %>
+    <%= form.text_field :comment2 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :comment3 %>
+    <%= form.text_field :comment3 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :comment4 %>
+    <%= form.text_field :comment4 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :comment5 %>
+    <%= form.text_field :comment5 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :comment6 %>
+    <%= form.text_field :comment6 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :comment7 %>
+    <%= form.text_field :comment7 %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

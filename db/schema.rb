@@ -15,18 +15,64 @@ ActiveRecord::Schema.define(version: 2024_10_11_030445) do
   create_table "grades", force: :cascade do |t|
     t.string "grade_name"
     t.string "class_name"
+  end
+
+  create_table "students", force: :cascade do |t|
+    t.string "name"
+    t.string "kana"
+    t.string "mail"
+    t.string "pw"
+  end
+
+  create_table "attends", force: :cascade do |t|
+    t.date "input"
+    t.boolean "hr_attend1"
+    t.boolean "hr_attend2"
+    t.boolean "attend1"
+    t.boolean "attend2"
+    t.boolean "attend3"
+    t.boolean "attend4"
+    t.boolean "attend5"
+    t.boolean "attend6"
+    t.boolean "attend7"
+    t.string "hr_comment1"
+    t.string "hr_comment2"
+    t.string "comment1"
+    t.string "comment2"
+    t.string "comment3"
+    t.string "comment4"
+    t.string "comment5"
+    t.string "comment6"
+    t.string "comment7"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "rooms", force: :cascade do |t|
     t.string "name"
+  end
+
+  create_table "teachers", force: :cascade do |t|
+    t.string "name"
+    t.string "mail"
+    t.string "pw"
+    t.integer "kana"
+  end
+
+  create_table "schedules", force: :cascade do |t|
+    t.date "input"
+    t.datetime "start"
+    t.datetime "finish"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "subjects", force: :cascade do |t|
     t.string "name"
+  end
+
+  create_table "timetables", force: :cascade do |t|
+    t.date "input"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

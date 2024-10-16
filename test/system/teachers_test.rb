@@ -18,6 +18,7 @@ class TeachersTest < ApplicationSystemTestCase
     fill_in "Mail", with: @teacher.mail
     fill_in "Name", with: @teacher.name
     fill_in "Pw", with: @teacher.pw
+    fill_in "Room", with: @teacher.room_id
     click_on "Create Teacher"
 
     assert_text "Teacher was successfully created"
@@ -32,6 +33,7 @@ class TeachersTest < ApplicationSystemTestCase
     fill_in "Mail", with: @teacher.mail
     fill_in "Name", with: @teacher.name
     fill_in "Pw", with: @teacher.pw
+    fill_in "Room", with: @teacher.room_id
     click_on "Update Teacher"
 
     assert_text "Teacher was successfully updated"

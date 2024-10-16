@@ -33,6 +33,7 @@ class AttendsTest < ApplicationSystemTestCase
     fill_in "Hr comment1", with: @attend.hr_comment1
     fill_in "Hr comment2", with: @attend.hr_comment2
     fill_in "Input", with: @attend.input
+    fill_in "Student", with: @attend.student_id
     click_on "Create Attend"
 
     assert_text "Attend was successfully created"
@@ -62,6 +63,7 @@ class AttendsTest < ApplicationSystemTestCase
     fill_in "Hr comment1", with: @attend.hr_comment1
     fill_in "Hr comment2", with: @attend.hr_comment2
     fill_in "Input", with: @attend.input
+    fill_in "Student", with: @attend.student_id
     click_on "Update Attend"
 
     assert_text "Attend was successfully updated"

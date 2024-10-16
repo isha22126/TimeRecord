@@ -1,11 +1,13 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  input: 2024-10-11
-  start: 2024-10-11 12:10:55
-  finish: 2024-10-11 12:10:55
+  teacher_id: 1
+  input: 2024-10-15
+  start: 2024-10-15 15:09:04
+  finish: 2024-10-15 15:09:04
 
 two:
-  input: 2024-10-11
-  start: 2024-10-11 12:10:55
-  finish: 2024-10-11 12:10:55
+  teacher_id: 1
+  input: 2024-10-15
+  start: 2024-10-15 15:09:04
+  finish: 2024-10-15 15:09:04

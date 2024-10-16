@@ -6,6 +6,23 @@
   <thead>
     <tr>
       <th>Input</th>
+      <th>Grade</th>
+      <th>Subject id1</th>
+      <th>Subject id2</th>
+      <th>Subject id3</th>
+      <th>Subject id4</th>
+      <th>Subject id5</th>
+      <th>Subject id6</th>
+      <th>Subject id7</th>
+      <th>Teacher id1</th>
+      <th>Teacher id2</th>
+      <th>Teacher id3</th>
+      <th>Teacher id4</th>
+      <th>Teacher id5</th>
+      <th>Teacher id6</th>
+      <th>Teacher id7</th>
+      <th>Hr teacher id1</th>
+      <th>Hr teacher id2</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -14,6 +31,23 @@
     <% @timetables.each do |timetable| %>
       <tr>
         <td><%= timetable.input %></td>
+        <td><%= timetable.grade_id %></td>
+        <td><%= timetable.subject_id1 %></td>
+        <td><%= timetable.subject_id2 %></td>
+        <td><%= timetable.subject_id3 %></td>
+        <td><%= timetable.subject_id4 %></td>
+        <td><%= timetable.subject_id5 %></td>
+        <td><%= timetable.subject_id6 %></td>
+        <td><%= timetable.subject_id7 %></td>
+        <td><%= timetable.teacher_id1 %></td>
+        <td><%= timetable.teacher_id2 %></td>
+        <td><%= timetable.teacher_id3 %></td>
+        <td><%= timetable.teacher_id4 %></td>
+        <td><%= timetable.teacher_id5 %></td>
+        <td><%= timetable.teacher_id6 %></td>
+        <td><%= timetable.teacher_id7 %></td>
+        <td><%= timetable.hr_teacher_id1 %></td>
+        <td><%= timetable.hr_teacher_id2 %></td>
         <td><%= link_to 'Show', timetable %></td>
         <td><%= link_to 'Edit', edit_timetable_path(timetable) %></td>
         <td><%= link_to 'Destroy', timetable, method: :delete, data: { confirm: 'Are you sure?' } %></td>

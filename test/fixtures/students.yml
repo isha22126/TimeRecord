@@ -2,12 +2,14 @@
 
 one:
   name: MyString
-  kana: MyString
   mail: MyString
   pw: MyString
+  grade_id: 1
+  kana: MyString
 
 two:
   name: MyString
-  kana: MyString
   mail: MyString
   pw: MyString
+  grade_id: 1
+  kana: MyString

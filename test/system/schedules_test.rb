@@ -17,6 +17,7 @@ class SchedulesTest < ApplicationSystemTestCase
     fill_in "Finish", with: @schedule.finish
     fill_in "Input", with: @schedule.input
     fill_in "Start", with: @schedule.start
+    fill_in "Teacher", with: @schedule.teacher_id
     click_on "Create Schedule"
 
     assert_text "Schedule was successfully created"
@@ -30,6 +31,7 @@ class SchedulesTest < ApplicationSystemTestCase
     fill_in "Finish", with: @schedule.finish
     fill_in "Input", with: @schedule.input
     fill_in "Start", with: @schedule.start
+    fill_in "Teacher", with: @schedule.teacher_id
     click_on "Update Schedule"
 
     assert_text "Schedule was successfully updated"

@@ -65,6 +65,6 @@ class AttendsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def attend_params
-      params.require(:attend).permit(:input, :hr_attend1, :hr_attend2, :attend1, :attend2, :attend3, :attend4, :attend5, :attend6, :attend7, :hr_comment1, :hr_comment2, :comment1, :comment2, :comment3, :comment4, :comment5, :comment6, :comment7)
+      params.require(:attend).permit(:input, :hr_attend1, :hr_attend2, :attend1, :attend2, :attend3, :attend4, :attend5, :attend6, :attend7, :hr_comment1, :hr_comment2, :comment1, :comment2, :comment3, :comment4, :comment5, :comment6, :comment7, :student_id)
     end
 end

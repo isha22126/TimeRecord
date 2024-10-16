@@ -20,6 +20,7 @@ class CreateAttends < ActiveRecord::Migration[6.1]
       t.string :comment5
       t.string :comment6
       t.string :comment7
+      t.integer :student_id
 
       t.timestamps
     end

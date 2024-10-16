@@ -14,6 +14,7 @@ class StudentsTest < ApplicationSystemTestCase
     visit students_url
     click_on "New Student"
 
+    fill_in "Grade", with: @student.grade_id
     fill_in "Kana", with: @student.kana
     fill_in "Mail", with: @student.mail
     fill_in "Name", with: @student.name
@@ -28,6 +29,7 @@ class StudentsTest < ApplicationSystemTestCase
     visit students_url
     click_on "Edit", match: :first
 
+    fill_in "Grade", with: @student.grade_id
     fill_in "Kana", with: @student.kana
     fill_in "Mail", with: @student.mail
     fill_in "Name", with: @student.name

@@ -4,10 +4,12 @@ one:
   name: MyString
   mail: MyString
   pw: MyString
-  kana: 1
+  room_id: 1
+  kana: MyString
 
 two:
   name: MyString
   mail: MyString
   pw: MyString
-  kana: 1
+  room_id: 1
+  kana: MyString

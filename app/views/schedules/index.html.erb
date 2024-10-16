@@ -5,6 +5,7 @@
 <table>
   <thead>
     <tr>
+      <th>Teacher</th>
       <th>Input</th>
       <th>Start</th>
       <th>Finish</th>
@@ -15,6 +16,7 @@
   <tbody>
     <% @schedules.each do |schedule| %>
       <tr>
+        <td><%= schedule.teacher_id %></td>
         <td><%= schedule.input %></td>
         <td><%= schedule.start %></td>
         <td><%= schedule.finish %></td>

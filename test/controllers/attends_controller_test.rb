@@ -17,7 +17,7 @@ class AttendsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create attend" do
     assert_difference('Attend.count') do
-      post attends_url, params: { attend: { attend1: @attend.attend1, attend2: @attend.attend2, attend3: @attend.attend3, attend4: @attend.attend4, attend5: @attend.attend5, attend6: @attend.attend6, attend7: @attend.attend7, comment1: @attend.comment1, comment2: @attend.comment2, comment3: @attend.comment3, comment4: @attend.comment4, comment5: @attend.comment5, comment6: @attend.comment6, comment7: @attend.comment7, hr_attend1: @attend.hr_attend1, hr_attend2: @attend.hr_attend2, hr_comment1: @attend.hr_comment1, hr_comment2: @attend.hr_comment2, input: @attend.input } }
+      post attends_url, params: { attend: { attend1: @attend.attend1, attend2: @attend.attend2, attend3: @attend.attend3, attend4: @attend.attend4, attend5: @attend.attend5, attend6: @attend.attend6, attend7: @attend.attend7, comment1: @attend.comment1, comment2: @attend.comment2, comment3: @attend.comment3, comment4: @attend.comment4, comment5: @attend.comment5, comment6: @attend.comment6, comment7: @attend.comment7, hr_attend1: @attend.hr_attend1, hr_attend2: @attend.hr_attend2, hr_comment1: @attend.hr_comment1, hr_comment2: @attend.hr_comment2, input: @attend.input, student_id: @attend.student_id } }
     end
 
     assert_redirected_to attend_url(Attend.last)
@@ -34,7 +34,7 @@ class AttendsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update attend" do
-    patch attend_url(@attend), params: { attend: { attend1: @attend.attend1, attend2: @attend.attend2, attend3: @attend.attend3, attend4: @attend.attend4, attend5: @attend.attend5, attend6: @attend.attend6, attend7: @attend.attend7, comment1: @attend.comment1, comment2: @attend.comment2, comment3: @attend.comment3, comment4: @attend.comment4, comment5: @attend.comment5, comment6: @attend.comment6, comment7: @attend.comment7, hr_attend1: @attend.hr_attend1, hr_attend2: @attend.hr_attend2, hr_comment1: @attend.hr_comment1, hr_comment2: @attend.hr_comment2, input: @attend.input } }
+    patch attend_url(@attend), params: { attend: { attend1: @attend.attend1, attend2: @attend.attend2, attend3: @attend.attend3, attend4: @attend.attend4, attend5: @attend.attend5, attend6: @attend.attend6, attend7: @attend.attend7, comment1: @attend.comment1, comment2: @attend.comment2, comment3: @attend.comment3, comment4: @attend.comment4, comment5: @attend.comment5, comment6: @attend.comment6, comment7: @attend.comment7, hr_attend1: @attend.hr_attend1, hr_attend2: @attend.hr_attend2, hr_comment1: @attend.hr_comment1, hr_comment2: @attend.hr_comment2, input: @attend.input, student_id: @attend.student_id } }
     assert_redirected_to attend_url(@attend)
   end
 

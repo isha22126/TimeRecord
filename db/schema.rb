@@ -10,19 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2024_10_11_030445) do
-
-  create_table "grades", force: :cascade do |t|
-    t.string "grade_name"
-    t.string "class_name"
-  end
-
-  create_table "students", force: :cascade do |t|
-    t.string "name"
-    t.string "kana"
-    t.string "mail"
-    t.string "pw"
-  end
+ActiveRecord::Schema.define(version: 2024_10_15_061006) do
 
   create_table "attends", force: :cascade do |t|
     t.date "input"
@@ -44,22 +32,26 @@ ActiveRecord::Schema.define(version: 2024_10_11_030445) do
     t.string "comment5"
     t.string "comment6"
     t.string "comment7"
+    t.integer "student_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "grades", force: :cascade do |t|
+    t.string "grade_name"
+    t.string "class_name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "rooms", force: :cascade do |t|
     t.string "name"
-  end
-
-  create_table "teachers", force: :cascade do |t|
-    t.string "name"
-    t.string "mail"
-    t.string "pw"
-    t.integer "kana"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "schedules", force: :cascade do |t|
+    t.integer "teacher_id"
     t.date "input"
     t.datetime "start"
     t.datetime "finish"
@@ -67,12 +59,51 @@ ActiveRecord::Schema.define(version: 2024_10_11_030445) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "students", force: :cascade do |t|
+    t.string "name"
+    t.string "mail"
+    t.string "pw"
+    t.integer "grade_id"
+    t.string "kana"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "subjects", force: :cascade do |t|
     t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "teachers", force: :cascade do |t|
+    t.string "name"
+    t.string "mail"
+    t.string "pw"
+    t.integer "room_id"
+    t.string "kana"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "timetables", force: :cascade do |t|
     t.date "input"
+    t.integer "grade_id"
+    t.integer "subject_id1"
+    t.integer "subject_id2"
+    t.integer "subject_id3"
+    t.integer "subject_id4"
+    t.integer "subject_id5"
+    t.integer "subject_id6"
+    t.integer "subject_id7"
+    t.integer "teacher_id1"
+    t.integer "teacher_id2"
+    t.integer "teacher_id3"
+    t.integer "teacher_id4"
+    t.integer "teacher_id5"
+    t.integer "teacher_id6"
+    t.integer "teacher_id7"
+    t.integer "hr_teacher_id1"
+    t.integer "hr_teacher_id2"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

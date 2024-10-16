@@ -1,7 +1,41 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  input: 2024-10-11
+  input: 2024-10-15
+  grade_id: 1
+  subject_id1: 1
+  subject_id2: 1
+  subject_id3: 1
+  subject_id4: 1
+  subject_id5: 1
+  subject_id6: 1
+  subject_id7: 1
+  teacher_id1: 1
+  teacher_id2: 1
+  teacher_id3: 1
+  teacher_id4: 1
+  teacher_id5: 1
+  teacher_id6: 1
+  teacher_id7: 1
+  hr_teacher_id1: 1
+  hr_teacher_id2: 1
 
 two:
-  input: 2024-10-11
+  input: 2024-10-15
+  grade_id: 1
+  subject_id1: 1
+  subject_id2: 1
+  subject_id3: 1
+  subject_id4: 1
+  subject_id5: 1
+  subject_id6: 1
+  subject_id7: 1
+  teacher_id1: 1
+  teacher_id2: 1
+  teacher_id3: 1
+  teacher_id4: 1
+  teacher_id5: 1
+  teacher_id6: 1
+  teacher_id7: 1
+  hr_teacher_id1: 1
+  hr_teacher_id2: 1

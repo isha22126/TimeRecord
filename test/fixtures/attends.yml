@@ -1,7 +1,7 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  input: 2024-10-11
+  input: 2024-10-15
   hr_attend1: false
   hr_attend2: false
   attend1: false
@@ -20,9 +20,10 @@ one:
   comment5: MyString
   comment6: MyString
   comment7: MyString
+  student_id: 1
 
 two:
-  input: 2024-10-11
+  input: 2024-10-15
   hr_attend1: false
   hr_attend2: false
   attend1: false
@@ -41,3 +42,4 @@ two:
   comment5: MyString
   comment6: MyString
   comment7: MyString
+  student_id: 1

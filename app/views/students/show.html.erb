@@ -6,11 +6,6 @@
 </p>
 
 <p>
-  <strong>Kana:</strong>
-  <%= @student.kana %>
-</p>
-
-<p>
   <strong>Mail:</strong>
   <%= @student.mail %>
 </p>
@@ -18,6 +13,16 @@
 <p>
   <strong>Pw:</strong>
   <%= @student.pw %>
+</p>
+
+<p>
+  <strong>Grade:</strong>
+  <%= @student.grade_id %>
+</p>
+
+<p>
+  <strong>Kana:</strong>
+  <%= @student.kana %>
 </p>
 
 <%= link_to 'Edit', edit_student_path(@student) %> |

@@ -6,6 +6,7 @@
   <thead>
     <tr>
       <th>Input</th>
+      <th>Student</th>
       <th>Hr attend1</th>
       <th>Hr attend2</th>
       <th>Attend1</th>
@@ -24,7 +25,6 @@
       <th>Comment5</th>
       <th>Comment6</th>
       <th>Comment7</th>
-      <th>Student</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -33,6 +33,7 @@
     <% @attends.each do |attend| %>
       <tr>
         <td><%= attend.input %></td>
+        <td><%= attend.student_id %></td>
         <td><%= attend.hr_attend1 %></td>
         <td><%= attend.hr_attend2 %></td>
         <td><%= attend.attend1 %></td>
@@ -51,7 +52,6 @@
         <td><%= attend.comment5 %></td>
         <td><%= attend.comment6 %></td>
         <td><%= attend.comment7 %></td>
-        <td><%= attend.student_id %></td>
         <td><%= link_to 'Show', attend %></td>
         <td><%= link_to 'Edit', edit_attend_path(attend) %></td>
         <td><%= link_to 'Destroy', attend, method: :delete, data: { confirm: 'Are you sure?' } %></td>

@@ -13,6 +13,7 @@ Student.delete_all
 Subject.delete_all
 Timetable.delete_all
 Attend.delete_all
+Schedule.delete_all
 # 教室
 r1 = Room.create(name: "職員室")
 r2 = Room.create(name: "商業センター")
@@ -183,5 +184,13 @@ time =Time.current.beginning_of_day
 s_date = time.advance(hours: 10)
 f_date = time.advance(days: 1,hours: 11,minutes: 30)
 sc1 = Schedule.create(teacher_id: t1.id, input: today,
+  start: s_date,finish: f_date,
+)
+sc2 = Schedule.create(teacher_id: t2.id, input: today,
+  start: s_date,finish: f_date,
+)
+s_date = time.advance(days: 2,hours: 14)
+f_date = time.advance(days: 2,hours: 16,minutes: 30)
+sc3 = Schedule.create(teacher_id: t1.id, input: today,
   start: s_date,finish: f_date,
 )

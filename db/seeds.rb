@@ -47,12 +47,12 @@ c33 = Grade.create(grade_name: "3", class_name: "3")
 c34 = Grade.create(grade_name: "3", class_name: "4")
 
 # 生徒
-s1 = Student.create(name: "安達", mail: "adachi@xxx.com",  pw: "adachi",   kana: "あだち",   grade_id: c34.id)
-s2 = Student.create(name: "石田", mail: "ishida@xxx.com",  pw: "ishida",   kana: "いしだ",   grade_id: c34.id)
-s3 = Student.create(name: "和泉", mail: "izumi@xxx.com",   pw: "izumi",    kana: "いずみ",   grade_id: c34.id)
-s4 = Student.create(name: "伊藤", mail: "itou@xxx.com",    pw: "itou",     kana: "いとう",   grade_id: c11.id)
-s5 = Student.create(name: "井上", mail: "inoue@xxx.com",   pw: "inoue",    kana: "いのうえ", grade_id: c11.id)
-s6 = Student.create(name: "岩成", mail: "iwanari@xxx.com", pw: "iwanari",  kana: "いわなり", grade_id: c11.id)
+s1 = Student.create(name: "安達", mail: "isha22121@xxx.com",  pw: "adachi",   kana: "あだち",   grade_id: c34.id)
+s2 = Student.create(name: "石田", mail: "isha22122@xxx.com",  pw: "ishida",   kana: "いしだ",   grade_id: c34.id)
+s3 = Student.create(name: "和泉", mail: "isha22123@xxx.com",   pw: "izumi",    kana: "いずみ",   grade_id: c34.id)
+s4 = Student.create(name: "伊藤", mail: "isha22124@xxx.com",    pw: "itou",     kana: "いとう",   grade_id: c11.id)
+s5 = Student.create(name: "井上", mail: "isha22125@xxx.com",   pw: "inoue",    kana: "いのうえ", grade_id: c11.id)
+s6 = Student.create(name: "岩成", mail: "isha22126@xxx.com", pw: "iwanari",  kana: "いわなり", grade_id: c11.id)
 
 # 教科
 k1 = Subject.create(name: "歴史")

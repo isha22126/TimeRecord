@@ -1,29 +1,30 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Name:</strong>
+  <strong>名前:</strong>
   <%= @student.name %>
 </p>
 
 <p>
-  <strong>Mail:</strong>
+  <strong>ふりがな:</strong>
+  <%= @student.kana %>
+</p>
+
+<p>
+  <strong>メールアドレス:</strong>
   <%= @student.mail %>
 </p>
 
 <p>
-  <strong>Pw:</strong>
+  <strong>パスワード:</strong>
   <%= @student.pw %>
 </p>
 
 <p>
-  <strong>Grade:</strong>
-  <%= @student.grade_id %>
+  <strong>学年クラス:</strong>
+  <%= @student.grade.full_name %>
 </p>
 
-<p>
-  <strong>Kana:</strong>
-  <%= @student.kana %>
-</p>
 
 <%= link_to 'Edit', edit_student_path(@student) %> |
 <%= link_to 'Back', students_path %>

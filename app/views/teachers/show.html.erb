@@ -1,29 +1,30 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Name:</strong>
+  <strong>名前:</strong>
   <%= @teacher.name %>
 </p>
 
 <p>
-  <strong>Mail:</strong>
+  <strong>ふりがな:</strong>
+  <%= @teacher.kana %>
+</p>
+
+<p>
+  <strong>メールアドレス:</strong>
   <%= @teacher.mail %>
 </p>
 
 <p>
-  <strong>Pw:</strong>
+  <strong>パスワード:</strong>
   <%= @teacher.pw %>
 </p>
 
 <p>
-  <strong>Room:</strong>
-  <%= @teacher.room_id %>
+  <strong>教室:</strong>
+  <%= @teacher.room.name %>
 </p>
 
-<p>
-  <strong>Kana:</strong>
-  <%= @teacher.kana %>
-</p>
 
 <%= link_to 'Edit', edit_teacher_path(@teacher) %> |
 <%= link_to 'Back', teachers_path %>

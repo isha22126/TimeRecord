@@ -13,10 +13,12 @@ class TeachersController < ApplicationController
   # GET /teachers/new
   def new
     @teacher = Teacher.new
+    @room = Room.all.order(:name)
   end
 
   # GET /teachers/1/edit
   def edit
+    @room = Room.all.order(:name)
   end
 
   # POST /teachers or /teachers.json

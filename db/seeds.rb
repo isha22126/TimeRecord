@@ -53,6 +53,7 @@ s3 = Student.create(name: "和泉", mail: "isha22123@xxx.com", pw: "izumi",    k
 s4 = Student.create(name: "伊藤", mail: "isha22124@xxx.com", pw: "itou",     kana: "いとう",   grade_id: c11.id)
 s5 = Student.create(name: "井上", mail: "isha22125@xxx.com", pw: "inoue",    kana: "いのうえ", grade_id: c11.id)
 s6 = Student.create(name: "岩成", mail: "isha22126@xxx.com", pw: "iwanari",  kana: "いわなり", grade_id: c11.id)
+s7 = Student.create(name: "江角", mall: "isha22127@xxx.com", pw: "esumi"     kana: "えすみ",   grade_id: c34.id)
 
 # 教科
 k1 = Subject.create(name: "歴史")

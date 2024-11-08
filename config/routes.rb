@@ -19,9 +19,9 @@ Rails.application.routes.draw do
   # 出欠機能
   get 'teacher_home', to: 'teacher_home#index',as: 'teacher_home' 
   get 'grade_select', to: 'grade_select#index',as: 'grade_select'
-  get 'attendance_list/:id/:date', to: 'attendance_list#show',as: 'attendance_list'
-  get 'attendance_subject_edit/:id/:date', to: 'attendance_list#subject_edit',as: 'attendance_subject_edit'
-  get 'attendance_edit/:id/:date', to: 'attendance_list#edit',as: 'attendance_edit'
+  get 'attendance_list/:grade_id/:date', to: 'attendance_list#show',as: 'attendance_list'
+  get 'attendance_subject_edit/:grade_id/:date', to: 'attendance_list#subject_edit',as: 'attendance_subject_edit'
+  get 'attendance_edit/:student_id/:date', to: 'attendance_list#edit',as: 'attendance_edit'
   patch 'attendance_update/:attend_id', to: 'attendance_list#update', as:'attendance_update'
 
   # 教員スケジュール関連

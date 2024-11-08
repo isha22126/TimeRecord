@@ -1,0 +1,75 @@
+<h1><%= @grade.full_name%></h1>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th class="col"><%= @date %></th>
+            <th class="col"></th>
+            <th class="col"></th>
+            <th class="col">1</th>
+            <th class="col">2</th>
+            <th class="col">3</th>
+            <th class="col">4</th>
+            <th class="col">5</th>
+            <th class="col">6</th>
+            <th class="col">7</th>
+            <th class="col"></th>
+        </tr>
+        <tr>
+            <th class="col"><%= link_to"教科",attendance_subject_edit_path%></th>
+            <th class="col"></th>
+            <th class="col">HR</th>
+            <th class="col"><%= @timetable.subject1.name %></th>
+            <th class="col"><%= @timetable.subject2.name %></th>
+            <th class="col"><%= @timetable.subject3.name %></th>
+            <th class="col"><%= @timetable.subject4.name %></th>
+            <th class="col"><%= @timetable.subject5.name %></th>
+            <th class="col"><%= @timetable.subject6.name %></th>
+            <th class="col"><%= @timetable.subject7.name %></th>
+            <th class="col">HR</th>
+        </tr>
+        <tr>
+            <th class="col">担当</th>
+            <th class="col"></th>
+            <th class="col"><%= @timetable.hr_teacher1.name %></th>
+            <th class="col"><%= @timetable.teacher1.name %></th>
+            <th class="col"><%= @timetable.teacher2.name %></th>
+            <th class="col"><%= @timetable.teacher3.name %></th>
+            <th class="col"><%= @timetable.teacher4.name %></th>
+            <th class="col"><%= @timetable.teacher5.name %></th>
+            <th class="col"><%= @timetable.teacher6.name %></th>
+            <th class="col"><%= @timetable.teacher7.name %></th>
+            <th class="col"><%= @timetable.hr_teacher2.name %></th>
+        </tr>
+    </thead>
+
+
+    <tbody>
+        <% @students.each do |student| %>
+            <% attend = @attends_hash[student.id] || Attend.new %>
+            <tr>
+                <td><%= student.name %></td>
+                <th class="col">
+                    <% if attend.id.nil? %>
+                        <%= link_to"新規", attendance_new_path(student.id, @date) %>
+                    <% else %>
+                        <%= link_to"編集", attendance_edit_path(attend.id, @date) %>
+                    <% end %>
+                </th>
+                <td> <%= attend.hr_attend1 %></td>
+                <td><%= attend.attend1 %></td>
+                <td><%= attend.attend2 %></td>
+                <td><%= attend.attend3 %></td>
+                <td><%= attend.attend4 %></td>
+                <td><%= attend.attend5 %></td>
+                <td><%= attend.attend6 %></td>
+                <td><%= attend.attend7 %></td>
+                <td><%= attend.hr_attend2 %></td>
+                
+            </tr>
+        <% end %>
+    </tbody>
+<table>
+
+
+<%# <%= link_to"Edit",edit_attendance_list_path(@grade.id) %> 

@@ -47,12 +47,12 @@ c33 = Grade.create(grade_name: "3", class_name: "3")
 c34 = Grade.create(grade_name: "3", class_name: "4")
 
 # 生徒
-s1 = Student.create(name: "安達", mail: "adachi@xxx.com",  pw: "adachi",   kana: "あだち",   grade_id: c34.id)
-s2 = Student.create(name: "石田", mail: "ishida@xxx.com",  pw: "ishida",   kana: "いしだ",   grade_id: c34.id)
-s3 = Student.create(name: "和泉", mail: "izumi@xxx.com",   pw: "izumi",    kana: "いずみ",   grade_id: c34.id)
-s4 = Student.create(name: "伊藤", mail: "itou@xxx.com",    pw: "itou",     kana: "いとう",   grade_id: c11.id)
-s5 = Student.create(name: "井上", mail: "inoue@xxx.com",   pw: "inoue",    kana: "いのうえ", grade_id: c11.id)
-s6 = Student.create(name: "岩成", mail: "iwanari@xxx.com", pw: "iwanari",  kana: "いわなり", grade_id: c11.id)
+s1 = Student.create(name: "安達", mail: "isha22121@xxx.com", pw: "adachi",   kana: "あだち",   grade_id: c34.id)
+s2 = Student.create(name: "石田", mail: "isha22122@xxx.com", pw: "ishida",   kana: "いしだ",   grade_id: c34.id)
+s3 = Student.create(name: "和泉", mail: "isha22123@xxx.com", pw: "izumi",    kana: "いずみ",   grade_id: c34.id)
+s4 = Student.create(name: "伊藤", mail: "isha22124@xxx.com", pw: "itou",     kana: "いとう",   grade_id: c11.id)
+s5 = Student.create(name: "井上", mail: "isha22125@xxx.com", pw: "inoue",    kana: "いのうえ", grade_id: c11.id)
+s6 = Student.create(name: "岩成", mail: "isha22126@xxx.com", pw: "iwanari",  kana: "いわなり", grade_id: c11.id)
 
 # 教科
 k1 = Subject.create(name: "歴史")
@@ -98,8 +98,8 @@ tt3 = Timetable.create(input: tommorow, grade_id: c34.id,
 )
 #出席
 a1 = Attend.create(input: today, student_id: s1.id,
-  hr_attend1: true, hr_attend2: false,
-  attend1: true, attend2: false, attend3: true, attend4: false, attend5: true, attend6: false, attend7: true,
+  hr_attend1: false, hr_attend2: true,
+  attend1: false, attend2: true, attend3: false, attend4: true, attend5: false, attend6: true, attend7: false,
   hr_comment1: "", hr_comment2: "発熱により早退",
   comment1: "", comment2: "腹痛のため保健室",
   comment3: "", comment4: "体育でケガをし保健室",
@@ -107,8 +107,8 @@ a1 = Attend.create(input: today, student_id: s1.id,
   comment7: "",
 )
 a2 = Attend.create(input: today, student_id: s2.id,
-  hr_attend1: true, hr_attend2: true,
-  attend1: true, attend2: true, attend3: true, attend4: true, attend5: true, attend6: true, attend7: true,
+  hr_attend1: false, hr_attend2: false,
+  attend1: false, attend2: false, attend3: false, attend4: false, attend5: false, attend6: false, attend7: false,
   hr_comment1: "", hr_comment2: "",
   comment1: "", comment2: "",
   comment3: "", comment4: "",
@@ -116,8 +116,8 @@ a2 = Attend.create(input: today, student_id: s2.id,
   comment7: "",
 )
 a3 = Attend.create(input: today, student_id: s3.id,
-  hr_attend1: true, hr_attend2: true,
-  attend1: true, attend2: true, attend3: true, attend4: true, attend5: true, attend6: true, attend7: true,
+  hr_attend1: false, hr_attend2: false,
+  attend1: false, attend2: false, attend3: false, attend4: false, attend5: false, attend6: false, attend7: false,
   hr_comment1: "", hr_comment2: "",
   comment1: "", comment2: "",
   comment3: "", comment4: "",
@@ -125,8 +125,8 @@ a3 = Attend.create(input: today, student_id: s3.id,
   comment7: "",
 )
 a4 = Attend.create(input: today, student_id: s4.id,
-  hr_attend1: true, hr_attend2: false,
-  attend1: true, attend2: true, attend3: true, attend4: false, attend5: false, attend6: false, attend7: false,
+  hr_attend1: false, hr_attend2: true,
+  attend1: false, attend2: false, attend3: false, attend4: true, attend5: true, attend6: true, attend7: true,
   hr_comment1: "", hr_comment2: "",
   comment1: "", comment2: "",
   comment3: "", comment4: "就職試験のため早退",
@@ -134,8 +134,8 @@ a4 = Attend.create(input: today, student_id: s4.id,
   comment7: "",
 )
 a5 = Attend.create(input: today, student_id: s5.id,
-  hr_attend1: true, hr_attend2: true,
-  attend1: true, attend2: true, attend3: true, attend4: true, attend5: true, attend6: true, attend7: true,
+  hr_attend1: false, hr_attend2: false,
+  attend1: false, attend2: false, attend3: false, attend4: false, attend5: false, attend6: false, attend7: false,
   hr_comment1: "", hr_comment2: "",
   comment1: "", comment2: "",
   comment3: "", comment4: "",
@@ -143,8 +143,8 @@ a5 = Attend.create(input: today, student_id: s5.id,
   comment7: "",
 )
 a6 = Attend.create(input: today, student_id: s6.id,
-  hr_attend1: true, hr_attend2: true,
-  attend1: true, attend2: true, attend3: true, attend4: true, attend5: true, attend6: true, attend7: true,
+  hr_attend1: false, hr_attend2: false,
+  attend1: false, attend2: false, attend3: false, attend4: false, attend5: false, attend6: false, attend7: false,
   hr_comment1: "", hr_comment2: "",
   comment1: "", comment2: "",
   comment3: "", comment4: "",
@@ -153,8 +153,8 @@ a6 = Attend.create(input: today, student_id: s6.id,
 )
 
 a7 = Attend.create(input: tommorow, student_id: s1.id,
-  hr_attend1: true, hr_attend2: true,
-  attend1: true, attend2: true, attend3: true, attend4: true, attend5: true, attend6: true, attend7: true,
+  hr_attend1: false, hr_attend2: false,
+  attend1: false, attend2: false, attend3: false, attend4: false, attend5: false, attend6: false, attend7: false,
   hr_comment1: "", hr_comment2: "",
   comment1: "", comment2: "",
   comment3: "", comment4: "",
@@ -162,8 +162,8 @@ a7 = Attend.create(input: tommorow, student_id: s1.id,
   comment7: "",
 )
 a8 = Attend.create(input: tommorow, student_id: s2.id,
-  hr_attend1: true, hr_attend2: true,
-  attend1: true, attend2: true, attend3: true, attend4: true, attend5: true, attend6: true, attend7: true,
+  hr_attend1: false, hr_attend2: false,
+  attend1: false, attend2: false, attend3: false, attend4: false, attend5: false, attend6: false, attend7: false,
   hr_comment1: "", hr_comment2: "",
   comment1: "", comment2: "",
   comment3: "", comment4: "",
@@ -171,8 +171,8 @@ a8 = Attend.create(input: tommorow, student_id: s2.id,
   comment7: "",
 )
 a9 = Attend.create(input: tommorow, student_id: s3.id,
-hr_attend1: true, hr_attend2: true,
-attend1: true, attend2: true, attend3: true, attend4: true, attend5: true, attend6: true, attend7: true,
+hr_attend1: false, hr_attend2: false,
+attend1: false, attend2: false, attend3: false, attend4: false, attend5: false, attend6: false, attend7: false,
 hr_comment1: "", hr_comment2: "",
 comment1: "", comment2: "",
 comment3: "", comment4: "",

@@ -1,0 +1,14 @@
+<h1>クラス選択</h1>
+<div class="container">
+<% @grades.group_by(&:grade_name).each do |grade_name, classes|%>
+    <div class="row">
+    <% classes.each do |grade| %>
+        <div class="col">
+            <%= link_to grade.full_name, attendance_list_path(grade.id, Date.today) %>
+        </div>
+    <% end %>
+    </div>
+<% end %>
+</div>
+
+<%= link_to "戻る", teacher_home_path %>

@@ -1,0 +1,25 @@
+<h1 align="center">不在時間検索</h1>
+<div class="one">
+    <h2 class="back"><a href = ''>戻る</a></h2>
+    <h2 class="search">
+        <%= form_tag(teacher_search_path) do %>
+        <%= text_field_tag "search[name]",session[:search_name ]%><%= submit_tag"検索"%>
+        <% end %>
+    </h2>
+</div>
+<table border="2px" style="border-collapse: collapse" align="center" class="table">
+<thead>
+<tr>
+    <th>名前</th>
+    <th>教室</th>
+</tr>
+</thead>
+<tbody>
+<% @teachers.each do |teacher|%>
+<tr>
+    <td style="font-size:30px;"><%= link_to teacher.name, teacher_schedule_path(teacher.id, Date.today) %></td>
+    <td style="font-size:30px;"><%= teacher.room.name %></td>
+</tr>
+<%end%>
+</tbody>
+</table>

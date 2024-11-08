@@ -1,0 +1,31 @@
+
+<div>
+    <h1 align="center"><%= @teacher.name %>先生　不在時間</h1>
+    <br>
+    <h2 class="back"><a href = '/teacher_select'>戻る</a></h2>
+    <br>
+    <h2><%= "#{@date.year}年" %></h2>
+    <h2><%= link_to "◀", teacher_schedule_path(@teacher.id, @date.last_month) %>
+        <%= "#{@date.mon}月" %>
+        <%= link_to "▶", teacher_schedule_path(@teacher.id, @date.next_month) %>
+        </h2>
+    <br>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>日時</th>
+                <th>開始</th>
+                <th>終了</th>
+            </tr>
+        </thead>
+        <tbody>
+        <% @schedules.each do |schedule| %>
+            <tr>
+                <td><%= schedule.start.day %>日</td>
+                <td><%= schedule.start.strftime(" %H:%M" ) %></td>
+                <td><%= schedule.finish.strftime("%m-%d %H:%M") %></td>
+            </tr>
+        <% end %>
+        </tbody>
+    </table>
+</div>

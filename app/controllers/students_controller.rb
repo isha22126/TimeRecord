@@ -13,10 +13,12 @@ class StudentsController < ApplicationController
   # GET /students/new
   def new
     @student = Student.new
+    @grades = Grade.all.order(:garade_name, :class_name)
   end
 
   # GET /students/1/edit
   def edit
+    @grades = Grade.all.order(:garade_name, :class_name)
   end
 
   # POST /students or /students.json

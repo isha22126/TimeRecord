@@ -1,2 +1,14 @@
+<h1>ログイン</h1>
+<body>
+<%= form_with url: login_create_path, model: @login do |form| %>
+  <div>
+    <%= form.label :mail,'メールアドレス' %> <br>
+    <%= form.text_field :mail %> <br>
 
-<%= @test %>
+    <%= form.label :pw ,'パスワード' %> <br>
+    <%= form.text_field :pw %> <br>
+
+    <%= form.submit :Login %>
+  </div>
+<% end %>
+</body>

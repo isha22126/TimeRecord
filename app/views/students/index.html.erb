@@ -1,15 +1,15 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Students</h1>
+<h1>生徒</h1>
 
-<table>
+<table class="table table-bordered">
   <thead>
     <tr>
-      <th>Name</th>
-      <th>Mail</th>
-      <th>Pw</th>
-      <th>Grade</th>
-      <th>Kana</th>
+      <th>名前</th>
+      <th>ふりがな</th>
+      <th>メールアドレス</th>
+      <th>パスワード</th>
+      <th>学年クラス</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -18,18 +18,19 @@
     <% @students.each do |student| %>
       <tr>
         <td><%= student.name %></td>
+        <td><%= student.kana %></td>
         <td><%= student.mail %></td>
         <td><%= student.pw %></td>
-        <td><%= student.grade_id %></td>
-        <td><%= student.kana %></td>
-        <td><%= link_to 'Show', student %></td>
-        <td><%= link_to 'Edit', edit_student_path(student) %></td>
-        <td><%= link_to 'Destroy', student, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= student.grade.full_name %></td>
+        <!--<td><%= link_to '確認', student %></td>-->
+        <td><%= link_to '編集', edit_student_path(student) %></td>
+        <td><%= link_to '削除', student, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
 <br>
-
-<%= link_to 'New Student', new_student_path %>
+<%= link_to '戻る', admin_home_path %>
+<br>
+<%= link_to '新規作成', new_student_path %>

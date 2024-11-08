@@ -12,28 +12,28 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :name %>
+    <%= form.label :nam,'名前' %>
     <%= form.text_field :name %>
   </div>
 
   <div class="field">
-    <%= form.label :mail %>
+    <%= form.label :kana,'ふりがな' %>
+    <%= form.text_field :kana %>
+  </div>
+
+  <div class="field">
+    <%= form.label :mail,'メールアドレス' %>
     <%= form.text_field :mail %>
   </div>
 
   <div class="field">
-    <%= form.label :pw %>
+    <%= form.label :pw,'パスワード' %>
     <%= form.text_field :pw %>
   </div>
 
   <div class="field">
-    <%= form.label :grade_id %>
-    <%= form.number_field :grade_id %>
-  </div>
-
-  <div class="field">
-    <%= form.label :kana %>
-    <%= form.text_field :kana %>
+    <%= form.label :grade_id,'学年クラス' %>
+    <%= form.collection_select :grade_id, @grades, :id, :full_name %>
   </div>
 
   <div class="actions">

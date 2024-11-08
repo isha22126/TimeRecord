@@ -15,6 +15,14 @@ Rails.application.routes.draw do
   # 管理者機能
   get 'admin_home', to: 'login#index', as: 'admin_home'
 
+  # 出欠機能
+  get 'teacher_home', to: 'teacher_home#index',as: 'teacher_home' 
+  get 'grade_select', to: 'grade_select#index',as: 'grade_select'
+  get 'attendance_list/:id/:date', to: 'attendance_list#show',as: 'attendance_list'
+  get 'attendance_subject_edit/:id/:date', to: 'attendance_list#subject_edit',as: 'attendance_subject_edit'
+  get 'attendance_edit/:id/:date', to: 'attendance_list#edit',as: 'attendance_edit'
+  patch 'attendance_update/:attend_id', to: 'attendance_list#update', as:'attendance_update'
+
   # 教員スケジュール関連
   get 'teacher_select', to: 'teacher_select#index', as: 'teacher_select'
   get 'teacher_schedule/:id/:date', to: 'teacher_schedule#show', as: 'teacher_schedule'

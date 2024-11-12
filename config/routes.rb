@@ -20,7 +20,12 @@ Rails.application.routes.draw do
   get 'teacher_home', to: 'teacher_home#index',as: 'teacher_home' 
   get 'grade_select', to: 'grade_select#index',as: 'grade_select'
   get 'attendance_list/:grade_id/:date', to: 'attendance_list#show',as: 'attendance_list'
+  get 'attendance_subject_new/:grade_id/:date', to: 'attendance_list#subject_new',as: 'attendance_subject_new'
+  post 'attendance_subject_create', to: 'attendance_list#subject_create', as:'attendance_subject_create'
   get 'attendance_subject_edit/:grade_id/:date', to: 'attendance_list#subject_edit',as: 'attendance_subject_edit'
+  patch 'attendance_subject_update/:timetable_id', to: 'attendance_list#subject_update', as:'attendance_subject_update'
+  get 'attendance_new/:student_id/:date', to: 'attendance_list#new',as: 'attendance_new'
+  post 'attendance_create', to: 'attendance_list#create', as:'attendance_create'
   get 'attendance_edit/:student_id/:date', to: 'attendance_list#edit',as: 'attendance_edit'
   patch 'attendance_update/:attend_id', to: 'attendance_list#update', as:'attendance_update'
 

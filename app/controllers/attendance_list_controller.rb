@@ -1,26 +1,37 @@
 class AttendanceListController < ApplicationController
   def show
     grade_id = params[:grade_id]
-    date = params[:date] || Date.today
-    @date = date
+    @date = params[:date] || Date.today
 
     @grade = Grade.find(grade_id)
     
-    @timetable = Timetable.find_by(grade_id: grade_id, input: date)
+    @timetable = Timetable.find_by(grade_id: grade_id, input: @date)
 
     @students = Student.where(grade_id: grade_id).order(:kana)
     student_id_list = @students.map(&:id)    
 
-    attends = Attend.where(input: date, student_id: student_id_list)
+    attends = Attend.where(input: @date, student_id: student_id_list)
     @attends_hash = attends.inject(Hash.new) do |hash, attend|
       hash[attend.student_id] = attend
       hash
     end
-
-    p @attends_hash
-    
   end
-  
+
+  def new
+    student_id = params[:student_id]
+    date = params[:date]
+    @attend = Attend.new(student_id: student_id, input: date)
+  end
+
+  def create
+    @attend = Attend.new(attend_params)
+    if @attend.save
+      redirect_to attendance_list_path(@attend.student.grade_id, @attend.input)
+    else
+      render :new
+    end
+  end
+
   def edit
     student_id = params[:student_id]
     @attend = Attend.find(student_id)
@@ -31,20 +42,58 @@ class AttendanceListController < ApplicationController
     @attend = Attend.find(attend_id)
 
     if @attend.update(attend_params)
-      redirect_to attendance_list_path(@attend.student.grade.id, @attend.input)
+      redirect_to attendance_list_path(@attend.student.grade_id, @attend.input)
     else
       render :edit
     end
   end
 
+  def subject_new
+    grade_id = params[:grade_id]
+    date = params[:date]
+    @timetable = Timetable.new(grade_id: grade_id, input: date)
+
+    @subjects = Subject.all
+  end
+
+  def subject_create
+    @timetable = Timetable.new(timetable_params)
+    if @timetable.save
+      redirect_to attendance_list_path(@timetable.grade_id, @timetable.input)
+    else
+      @subjects = Subject.all
+      render :subject_new
+    end
+  end
 
   def subject_edit
+    grade_id = params[:grade_id]
+    date = params[:date]
+    @timetable = Timetable.find_by(grade_id: grade_id, input: date)
+
+    @subjects = Subject.all
+  end
+
+  def subject_update
+    timetable_id = params[:timetable_id]
+    @timetable = Timetable.find(timetable_id)
+
+    if @timetable.update(timetable_params)
+      redirect_to attendance_list_path(@timetable.grade_id, @timetable.input)
+    else
+      @subjects = Subject.all
+      render :subject_edit
+    end
   end
 
   private
 
   def attend_params
-    params.require(:attend).permit(:hr_attend1, :hr_attend2, :attend1, :attend2, :attend3, :attend4, :attend5, :attend6, :attend7, :hr_comment1, :hr_comment2, :comment1, :comment2, :comment3, :comment4, :comment5, :comment6, :comment7)
+    params.require(:attend).permit(:input, :student_id, :hr_attend1, :hr_attend2, :attend1, :attend2, :attend3, :attend4, :attend5, :attend6, :attend7, :hr_comment1, :hr_comment2, :comment1, :comment2, :comment3, :comment4, :comment5, :comment6, :comment7)
+  end
+
+  def timetable_params
+    params.require(:timetable).permit(:input, :grade_id, :subject_id1, :subject_id2, :subject_id3, :subject_id4, :subject_id5, :subject_id6, :subject_id7)
   end
 
 

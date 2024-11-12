@@ -1,5 +1,8 @@
 <h1><%=@attend.student.name%></h1>
-<%= form_with url: attendance_update_path(@attend.id), model: @attend do |form| %>
+<%= form_with url: attendance_create_path, model: @attend do |form| %>
+    <%= form.hidden_field :input %>
+    <%= form.hidden_field :student_id %>
+
     <p>
         <%= form.label 'ＨＲ１'%>
         <%= form.check_box :hr_attend1 %>
@@ -55,6 +58,6 @@
     </p>
     <%# true falesを逆にする %>
     <%= link_to '戻る', attendance_list_path(@attend.student.grade_id, @attend.input)%>
-    <%=form.submit '更新'%>
+    <%=form.submit '登録'%>
 
 <% end %>

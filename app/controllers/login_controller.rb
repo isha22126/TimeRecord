@@ -16,6 +16,7 @@ class LoginController < ApplicationController
       redirect_to admin_home_path
     elsif teacher
       # 教員ログイン
+      set_login_teacher(teacher)
       redirect_to teacher_home_path
     elsif student
       # 生徒ログイン

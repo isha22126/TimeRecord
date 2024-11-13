@@ -2,6 +2,7 @@ class LoginController < ApplicationController
 
   def index
     @login = Teacher.new
+
   end
 
   def create
@@ -9,8 +10,11 @@ class LoginController < ApplicationController
     
     teacher = Teacher.find_by(mail: @login.mail, pw: @login.pw)
     student = Student.find_by(mail: @login.mail, pw: @login.pw)
-    
-    if teacher
+
+    if @login.mail == 'admin@xxx.com' && @login.pw == 'admin' 
+      #管理者
+      redirect_to admin_home_path
+    elsif teacher
       # 教員ログイン
       redirect_to teacher_home_path
     elsif student

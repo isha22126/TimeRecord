@@ -14,7 +14,7 @@ Rails.application.routes.draw do
   post 'login', to: 'login#create', as: :login_create
 
   # 管理者機能
-  get 'admin_home', to: 'login#index', as: 'admin_home'
+  get 'admin_home', to: 'admin_home#index', as: 'admin_home'
 
   # 出欠機能
   get 'teacher_home', to: 'teacher_home#index',as: 'teacher_home' 

@@ -15,8 +15,23 @@
             <th class="col">7</th>
             <th class="col"></th>
         </tr>
+        <% if @timetable.nil? %>
         <tr>
-            <th class="col"><%= link_to"教科",attendance_subject_edit_path%></th>
+            <th class="col"><%= link_to "教科", attendance_subject_new_path%></th>
+            <th class="col"></th>
+            <th class="col">HR</th>
+            <th class="col"></th>
+            <th class="col"></th>
+            <th class="col"></th>
+            <th class="col"></th>
+            <th class="col"></th>
+            <th class="col"></th>
+            <th class="col"></th>
+            <th class="col">HR</th>
+        </tr>
+        <% else %>
+        <tr>
+            <th class="col"><%= link_to "教科", attendance_subject_edit_path%></th>
             <th class="col"></th>
             <th class="col">HR</th>
             <th class="col"><%= @timetable.subject1.name %></th>
@@ -28,21 +43,21 @@
             <th class="col"><%= @timetable.subject7.name %></th>
             <th class="col">HR</th>
         </tr>
+        <% end %>
         <tr>
             <th class="col">担当</th>
             <th class="col"></th>
-            <th class="col"><%= @timetable.hr_teacher1.name %></th>
-            <th class="col"><%= @timetable.teacher1.name %></th>
-            <th class="col"><%= @timetable.teacher2.name %></th>
-            <th class="col"><%= @timetable.teacher3.name %></th>
-            <th class="col"><%= @timetable.teacher4.name %></th>
-            <th class="col"><%= @timetable.teacher5.name %></th>
-            <th class="col"><%= @timetable.teacher6.name %></th>
-            <th class="col"><%= @timetable.teacher7.name %></th>
-            <th class="col"><%= @timetable.hr_teacher2.name %></th>
+            <th class="col"><%= render 'teacher_link_to', teacher: @timetable.hr_teacher1 %></th>
+            <th class="col"><%= render 'teacher_link_to', teacher: @timetable.teacher1 %></th>
+            <th class="col"><%= render 'teacher_link_to', teacher: @timetable.teacher2 %></th>
+            <th class="col"><%= render 'teacher_link_to', teacher: @timetable.teacher3 %></th>
+            <th class="col"><%= render 'teacher_link_to', teacher: @timetable.teacher4 %></th>
+            <th class="col"><%= render 'teacher_link_to', teacher: @timetable.teacher5 %></th>
+            <th class="col"><%= render 'teacher_link_to', teacher: @timetable.teacher6 %></th>
+            <th class="col"><%= render 'teacher_link_to', teacher: @timetable.teacher7 %></th>
+            <th class="col"><%= render 'teacher_link_to', teacher: @timetable.hr_teacher2 %></th>            
         </tr>
     </thead>
-
 
     <tbody>
         <% @students.each do |student| %>

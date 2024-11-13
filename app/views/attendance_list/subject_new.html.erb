@@ -1,0 +1,16 @@
+<h1><%= @timetable.grade.full_name %></h1>
+<%= form_with url: attendance_subject_create_path, model: @timetable do |form| %>
+
+    <%= form.hidden_field :input %>
+    <%= form.hidden_field :grade_id %>
+
+    <%= form.collection_select(:subject_id1, @subjects, :id, :name) %>
+    <%= form.collection_select(:subject_id2, @subjects, :id, :name) %>
+    <%= form.collection_select(:subject_id3, @subjects, :id, :name) %>
+    <%= form.collection_select(:subject_id4, @subjects, :id, :name) %>
+    <%= form.collection_select(:subject_id5, @subjects, :id, :name) %>
+    <%= form.collection_select(:subject_id6, @subjects, :id, :name) %>
+    <%= form.collection_select(:subject_id7, @subjects, :id, :name) %>
+
+    <%= form.submit "保存"%>
+<% end%>

@@ -2,13 +2,14 @@
 <div>
     <h1 align="center"><%= @teacher.name %>先生　不在時間</h1>
     <br>
-    <h2 class="back"><a href = '/teacher_select'>戻る</a></h2>
+    <%= link_to'戻る',"/teacher_select",{class:"btn btn-outline-secondary"}%>
+    <br>
     <br>
     <h2><%= "#{@date.year}年" %></h2>
     <h2><%= link_to "◀", teacher_schedule_path(@teacher.id, @date.last_month) %>
         <%= "#{@date.mon}月" %>
         <%= link_to "▶", teacher_schedule_path(@teacher.id, @date.next_month) %>
-        </h2>
+    </h2>
     <br>
     <table class="table">
         <thead>

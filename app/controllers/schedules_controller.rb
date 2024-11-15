@@ -3,7 +3,8 @@ class SchedulesController < ApplicationController
 
   # GET /schedules or /schedules.json
   def index
-    @schedules = Schedule.all.order(:input,:start)
+    teacher_id = login_teacher.id
+    @schedules = Schedule.where(teacher_id: teacher_id).order(:start)
   end
 
   # GET /schedules/1 or /schedules/1.json
@@ -22,28 +23,23 @@ class SchedulesController < ApplicationController
   # POST /schedules or /schedules.json
   def create
     @schedule = Schedule.new(schedule_params)
+    @schedule.teacher_id = login_teacher.id
 
-    respond_to do |format|
-      if @schedule.save
-        format.html { redirect_to @schedule, notice: "Schedule was successfully created." }
-        format.json { render :show, status: :created, location: @schedule }
-      else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @schedule.errors, status: :unprocessable_entity }
-      end
+    if @schedule.save
+        redirect_to @schedule, notice: "Schedule was successfully created."
+    else
+      render :new, status: :unprocessable_entity 
     end
   end
 
   # PATCH/PUT /schedules/1 or /schedules/1.json
   def update
-    respond_to do |format|
-      if @schedule.update(schedule_params)
-        format.html { redirect_to @schedule, notice: "Schedule was successfully updated." }
-        format.json { render :show, status: :ok, location: @schedule }
-      else
-        format.html { render :edit, status: :unprocessable_entity }
-        format.json { render json: @schedule.errors, status: :unprocessable_entity }
-      end
+    @schedule.teacher_id = login_teacher.id
+
+    if @schedule.update(schedule_params)
+      redirect_to @schedule, notice: "Schedule was successfully updated."
+    else
+      render :edit, status: :unprocessable_entity
     end
   end
 

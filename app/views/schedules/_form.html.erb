@@ -11,27 +11,19 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :teacher_id %>
-    <%= form.number_field :teacher_id %>
-  </div>
+  <h2 class = "time">
+    <div class="field2">
+      <%= form.label :start %>
+      <%= form.datetime_select :start ,:use_month_numbers => true,:minute_step => 30 %>
+    </div>
 
-  <div class="field">
-    <%= form.label :input %>
-    <%= form.date_select :input %>
-  </div>
-
-  <div class="field">
-    <%= form.label :start %>
-    <%= form.datetime_select :start %>
-  </div>
-
-  <div class="field">
-    <%= form.label :finish %>
-    <%= form.datetime_select :finish %>
-  </div>
+    <div class="field">
+      <%= form.label :finish %>
+      <%= form.datetime_select :finish ,:use_month_numbers => true,:minute_step => 30%>
+    </div>
+  </h2>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit "保存" %>
   </div>
 <% end %>

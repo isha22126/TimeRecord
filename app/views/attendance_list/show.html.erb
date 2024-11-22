@@ -58,7 +58,7 @@
                     <% if attend.id.nil? %>
                         <%= link_to"新規", attendance_new_path(student.id, @date), remote:true %>
                     <% else %>
-                        <%= link_to"編集", attendance_edit_path(attend.id, @date),  {class: "bi bi-pencil-fill"}, remote:true %>
+                        <%= link_to"編集", attendance_edit_path(attend.id, @date), remote:true %>    <!-- {class: "bi bi-pencil-fill"} -->
                     <% end %>
                 </th>
                 <td> <%= attend.hr_attend1 %></td>

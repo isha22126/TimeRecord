@@ -15,35 +15,25 @@
             <th class="col">7</th>
             <th class="col"></th>
         </tr>
-        <% if @timetable.nil? %>
+
         <tr>
-            <th class="col"><%= link_to "教科", attendance_subject_new_path%></th>
+            <% if @timetable.subject1.nil? %>
+                <th class="col"><%= link_to "教科", attendance_subject_new_path, remote: true %></th>
+            <% else %>
+                <th class="col"><%= link_to "教科", attendance_subject_edit_path, remote: true %></th>
+            <% end %>
             <th class="col"></th>
             <th class="col">HR</th>
-            <th class="col"></th>
-            <th class="col"></th>
-            <th class="col"></th>
-            <th class="col"></th>
-            <th class="col"></th>
-            <th class="col"></th>
-            <th class="col"></th>
+            <th class="col"><%= @timetable.subject1.name if @timetable.subject1.present? %></th>
+            <th class="col"><%= @timetable.subject2.name if @timetable.subject2.present? %></th>
+            <th class="col"><%= @timetable.subject3.name if @timetable.subject3.present? %></th>
+            <th class="col"><%= @timetable.subject4.name if @timetable.subject4.present? %></th>
+            <th class="col"><%= @timetable.subject5.name if @timetable.subject5.present? %></th>
+            <th class="col"><%= @timetable.subject6.name if @timetable.subject6.present? %></th>
+            <th class="col"><%= @timetable.subject7.name if @timetable.subject7.present? %></th>
             <th class="col">HR</th>
         </tr>
-        <% else %>
-        <tr>
-            <th class="col"><%= link_to "教科", attendance_subject_edit_path%></th>
-            <th class="col"></th>
-            <th class="col">HR</th>
-            <th class="col"><%= @timetable.subject1.name %></th>
-            <th class="col"><%= @timetable.subject2.name %></th>
-            <th class="col"><%= @timetable.subject3.name %></th>
-            <th class="col"><%= @timetable.subject4.name %></th>
-            <th class="col"><%= @timetable.subject5.name %></th>
-            <th class="col"><%= @timetable.subject6.name %></th>
-            <th class="col"><%= @timetable.subject7.name %></th>
-            <th class="col">HR</th>
-        </tr>
-        <% end %>
+
         <tr>
             <th class="col">担当</th>
             <th class="col"></th>
@@ -55,7 +45,7 @@
             <th class="col"><%= render 'teacher_link_to', teacher: @timetable.teacher5 %></th>
             <th class="col"><%= render 'teacher_link_to', teacher: @timetable.teacher6 %></th>
             <th class="col"><%= render 'teacher_link_to', teacher: @timetable.teacher7 %></th>
-            <th class="col"><%= render 'teacher_link_to', teacher: @timetable.hr_teacher2 %></th>            
+            <th class="col"><%= render 'teacher_link_to', teacher: @timetable.hr_teacher2 %></th>
         </tr>
     </thead>
 
@@ -66,9 +56,9 @@
                 <td><%= student.name %></td>
                 <th class="col">
                     <% if attend.id.nil? %>
-                        <%= link_to"新規", attendance_new_path(student.id, @date) %>
+                        <%= link_to"新規", attendance_new_path(student.id, @date), remote:true %>
                     <% else %>
-                        <%= link_to"編集", attendance_edit_path(attend.id, @date) %>
+                        <%= link_to"編集", attendance_edit_path(attend.id, @date),  {class: "bi bi-pencil-fill"}, remote:true %>
                     <% end %>
                 </th>
                 <td> <%= attend.hr_attend1 %></td>
@@ -86,5 +76,6 @@
     </tbody>
 <table>
 
+<div id="modal-form" class="modal fade"></div>
 
 <%# <%= link_to"Edit",edit_attendance_list_path(@grade.id) %> 

@@ -1,14 +1,14 @@
-<h1>クラス選択</h1>
-<div class="container">
+<h1 align="center">クラス選択</h1>
+<div class="container" align="center" >
 <% @grades.group_by(&:grade_name).each do |grade_name, classes|%>
     <div class="row">
     <% classes.each do |grade| %>
         <div class="col">
-            <%= link_to grade.full_name, attendance_list_path(grade.id, Date.today) %>
+            <%= link_to grade.full_name, attendance_list_path(grade.id, Date.today),{class: "btn btn-primary btn-lg"} %>
         </div>
     <% end %>
     </div>
 <% end %>
 </div>
 
-<%= link_to "戻る", teacher_home_path %>
+<%= link_to "戻る", teacher_home_path,{class:"btn btn-outline-secondary"} %>

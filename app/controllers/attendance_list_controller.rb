@@ -5,7 +5,7 @@ class AttendanceListController < ApplicationController
 
     @grade = Grade.find(grade_id)
     
-    @timetable = Timetable.find_by(grade_id: grade_id, input: @date)
+    @timetable = Timetable.find_by(grade_id: grade_id, input: @date) || Timetable.new
 
     @students = Student.where(grade_id: grade_id).order(:kana)
     student_id_list = @students.map(&:id)    

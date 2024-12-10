@@ -1,5 +1,5 @@
-<% if teacher %>
-    <%= link_to teacher.name, "/" %>
+<% if timetable_id.present? %>
+    <%= link_to (teacher ? teacher.name : "未設定"), attendance_teacher_edit_path(timetable_id, column_name: column_name), remote: true %>
 <% else %>
-    <%= link_to "未設定", "/" %>
+    設定不可
 <% end %>

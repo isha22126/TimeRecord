@@ -86,6 +86,28 @@ class AttendanceListController < ApplicationController
     end
   end
 
+  def teacher_edit
+    timetable_id = params[:timetable_id]
+    @timetable = Timetable.find(timetable_id)
+    @column_name = params[:column_name]
+    if @timetable[@column_name].nil?
+      @timetable[@column_name] = login_teacher.id
+    end
+    @teachers = Teacher.all
+  end
+
+  def teacher_update
+    timetable_id = params[:timetable_id]
+    @timetable = Timetable.find(timetable_id)
+    if @timetable.update(teacher_params)
+      redirect_to attendance_list_path(@timetable.grade_id, @timetable.input)
+    else
+      @column_name = params[:column_name]
+      @teachers = Teacher.all
+      render :teacher_edit
+    end
+  end
+
   private
 
   def attend_params
@@ -94,6 +116,10 @@ class AttendanceListController < ApplicationController
 
   def timetable_params
     params.require(:timetable).permit(:input, :grade_id, :subject_id1, :subject_id2, :subject_id3, :subject_id4, :subject_id5, :subject_id6, :subject_id7)
+  end
+
+  def teacher_params
+    params.require(:timetable).permit(:hr_teacher_id1, :hr_teacher_id2, :teacher_id1, :teacher_id2, :teacher_id3, :teacher_id4, :teacher_id5, :teacher_id6, :teacher_id7)
   end
 
 

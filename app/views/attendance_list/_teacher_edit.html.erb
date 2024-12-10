@@ -1,0 +1,17 @@
+<div class="modal-dialog" role="document">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title">教員選択</h5>
+            <button type="button" class="btn-closee" data-bs-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="modal-body">
+            <%= form_with url: attendance_teacher_update_path(@timetable.id), model: @timetable do |form| %>
+                <%= form.collection_select(@column_name, @teachers, :id, :name) %>
+                <%= hidden_field_tag :column_name, @column_name %>
+                <%= form.submit "保存"%>
+            <% end%>
+        </div>
+    </div>
+</div>

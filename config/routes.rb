@@ -28,7 +28,9 @@ Rails.application.routes.draw do
   post 'attendance_create', to: 'attendance_list#create', as:'attendance_create'
   get 'attendance_edit/:student_id/:date', to: 'attendance_list#edit',as: 'attendance_edit'
   patch 'attendance_update/:attend_id', to: 'attendance_list#update', as:'attendance_update'
-
+  get 'attendance_teacher_edit/:timetable_id', to: 'attendance_list#teacher_edit', as: 'attendance_teacher_edit'
+  patch 'attendance_teacher_update/:timetable_id', to: 'attendance_list#teacher_update', as:'attendance_teacher_update'
+  
   # 教員スケジュール関連
   get 'teacher_select', to: 'teacher_select#index', as: 'teacher_select'
   get 'teacher_schedule/:id/:date', to: 'teacher_schedule#show', as: 'teacher_schedule'

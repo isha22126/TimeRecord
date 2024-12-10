@@ -37,23 +37,24 @@
         <tr>
             <th class="col">担当</th>
             <th class="col"></th>
-            <th class="col"><%= render 'teacher_link_to', teacher: @timetable.hr_teacher1 %></th>
-            <th class="col"><%= render 'teacher_link_to', teacher: @timetable.teacher1 %></th>
-            <th class="col"><%= render 'teacher_link_to', teacher: @timetable.teacher2 %></th>
-            <th class="col"><%= render 'teacher_link_to', teacher: @timetable.teacher3 %></th>
-            <th class="col"><%= render 'teacher_link_to', teacher: @timetable.teacher4 %></th>
-            <th class="col"><%= render 'teacher_link_to', teacher: @timetable.teacher5 %></th>
-            <th class="col"><%= render 'teacher_link_to', teacher: @timetable.teacher6 %></th>
-            <th class="col"><%= render 'teacher_link_to', teacher: @timetable.teacher7 %></th>
-            <th class="col"><%= render 'teacher_link_to', teacher: @timetable.hr_teacher2 %></th>
+            <th class="col"><%= render 'teacher_link_to', teacher: @timetable.hr_teacher1, timetable_id: @timetable.id, column_name: "hr_teacher_id1" %></th>
+            <th class="col"><%= render 'teacher_link_to', teacher: @timetable.teacher1, timetable_id: @timetable.id, column_name: "teacher_id1" %></th>
+            <th class="col"><%= render 'teacher_link_to', teacher: @timetable.teacher2, timetable_id: @timetable.id, column_name: "teacher_id2" %></th>
+            <th class="col"><%= render 'teacher_link_to', teacher: @timetable.teacher3, timetable_id: @timetable.id, column_name: "teacher_id3" %></th>
+            <th class="col"><%= render 'teacher_link_to', teacher: @timetable.teacher4, timetable_id: @timetable.id, column_name: "teacher_id4" %></th>
+            <th class="col"><%= render 'teacher_link_to', teacher: @timetable.teacher5, timetable_id: @timetable.id, column_name: "teacher_id5" %></th>
+            <th class="col"><%= render 'teacher_link_to', teacher: @timetable.teacher6, timetable_id: @timetable.id, column_name: "teacher_id6" %></th>
+            <th class="col"><%= render 'teacher_link_to', teacher: @timetable.teacher7, timetable_id: @timetable.id, column_name: "teacher_id7" %></th>
+            <th class="col"><%= render 'teacher_link_to', teacher: @timetable.hr_teacher2, timetable_id: @timetable.id, column_name: "hr_teacher_id2" %></th>
         </tr>
+
     </thead>
 
     <tbody>
         <% @students.each do |student| %>
             <% attend = @attends_hash[student.id] || Attend.new %>
             <tr>
-                <td><%= student.name %></td>
+                <th><%= student.name %></th>
                 <th class="col">
                     <% if attend.id.nil? %>
                         <%= link_to"新規", attendance_new_path(student.id, @date), remote:true %>
@@ -73,8 +74,12 @@
                 
             </tr>
         <% end %>
+        
     </tbody>
+    
 <table>
+
+<%= link_to'戻る',"/grade_select",{class:"btn btn-outline-secondary"}%>
 
 <div id="modal-form" class="modal fade"></div>
 

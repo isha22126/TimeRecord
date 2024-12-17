@@ -21,6 +21,8 @@ class AttendanceListController < ApplicationController
     student_id = params[:student_id]
     date = params[:date]
     @attend = Attend.new(student_id: student_id, input: date)
+
+    @subject7 = Timetable.find_by(grade_id: @attend.student.grade_id, input: @attend.input).subject7
   end
 
   def create
@@ -35,6 +37,8 @@ class AttendanceListController < ApplicationController
   def edit
     student_id = params[:student_id]
     @attend = Attend.find(student_id)
+
+    @subject7 = Timetable.find_by(grade_id: @attend.student.grade_id, input: @attend.input).subject7
   end
 
   def update

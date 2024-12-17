@@ -8,6 +8,7 @@
         </div>
 
         <div class="modal-body">
+            <p>欠席に☑をいれてください</p>
             <%= form_with url: attendance_create_path, model: @attend do |form| %>
                 <%= form.hidden_field :input %>
                 <%= form.hidden_field :student_id %>
@@ -53,13 +54,15 @@
                     <%= form.check_box :attend6 %>
                     <%= form.text_field :comment6 %>
                 </p>
-
+                
+                <% unless @subject7.disabled? %>
                 <p>
                     <%= form.label '７限　'%>
                     <%= form.check_box :attend7 %>
                     <%= form.text_field :comment7 %>
                 </p>
-
+                <% end %>
+                
                 <p>
                     <%= form.label 'ＨＲ２'%>
                     <%= form.check_box :hr_attend2 %>

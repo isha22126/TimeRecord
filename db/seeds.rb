@@ -32,6 +32,7 @@ t7 = Teacher.create(name: "松本", mail: "matsumoto@xxx.com", pw: "matsumoto", 
 t8 = Teacher.create(name: "周藤", mail: "sutou@xxx.com",     pw: "sutou",     kana: "すとう",   room_id: r4.id)
 t9 = Teacher.create(name: "松田", mail: "matsuda@xxx.com",   pw: "matsuda",   kana: "まつだ",   room_id: r4.id)
 
+
 # 学年・クラス
 c11 = Grade.create(grade_name: "1", class_name: "1")
 c12 = Grade.create(grade_name: "1", class_name: "2") 
@@ -63,6 +64,7 @@ k4 = Subject.create(name: "科人")
 k5 = Subject.create(name: "論国")
 k6 = Subject.create(name: "体育")
 k7 = Subject.create(name: "家総")
+k8 = Subject.create(name: "-")
 
 # 時間割
 today = Date.today

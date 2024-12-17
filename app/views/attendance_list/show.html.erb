@@ -37,45 +37,59 @@
         <tr>
             <th class="col">担当</th>
             <th class="col"></th>
-            <th class="col"><%= render 'teacher_link_to', teacher: @timetable.hr_teacher1 %></th>
-            <th class="col"><%= render 'teacher_link_to', teacher: @timetable.teacher1 %></th>
-            <th class="col"><%= render 'teacher_link_to', teacher: @timetable.teacher2 %></th>
-            <th class="col"><%= render 'teacher_link_to', teacher: @timetable.teacher3 %></th>
-            <th class="col"><%= render 'teacher_link_to', teacher: @timetable.teacher4 %></th>
-            <th class="col"><%= render 'teacher_link_to', teacher: @timetable.teacher5 %></th>
-            <th class="col"><%= render 'teacher_link_to', teacher: @timetable.teacher6 %></th>
-            <th class="col"><%= render 'teacher_link_to', teacher: @timetable.teacher7 %></th>
-            <th class="col"><%= render 'teacher_link_to', teacher: @timetable.hr_teacher2 %></th>
+            <th class="col"><%= render 'teacher_link_to', timetable: @timetable, associate_name: "hr_teacher1", column_name: "hr_teacher_id1" %></th>
+            <th class="col"><%= render 'teacher_link_to', timetable: @timetable, associate_name: "teacher1",    column_name: "teacher_id1" %></th>
+            <th class="col"><%= render 'teacher_link_to', timetable: @timetable, associate_name: "teacher2",    column_name: "teacher_id2" %></th>
+            <th class="col"><%= render 'teacher_link_to', timetable: @timetable, associate_name: "teacher3",    column_name: "teacher_id3" %></th>
+            <th class="col"><%= render 'teacher_link_to', timetable: @timetable, associate_name: "teacher4",    column_name: "teacher_id4" %></th>
+            <th class="col"><%= render 'teacher_link_to', timetable: @timetable, associate_name: "teacher5",    column_name: "teacher_id5" %></th>
+            <th class="col"><%= render 'teacher_link_to', timetable: @timetable, associate_name: "teacher6",    column_name: "teacher_id6" %></th>
+            <th class="col"><%= render 'teacher_link_to', timetable: @timetable, associate_name: "teacher7",    column_name: "teacher_id7" %></th>
+            <th class="col"><%= render 'teacher_link_to', timetable: @timetable, associate_name: "hr_teacher2", column_name: "hr_teacher_id2" %></th>
         </tr>
+
     </thead>
 
     <tbody>
         <% @students.each do |student| %>
             <% attend = @attends_hash[student.id] || Attend.new %>
             <tr>
-                <td><%= student.name %></td>
-                <th class="col">
-                    <% if attend.id.nil? %>
-                        <%= link_to"新規", attendance_new_path(student.id, @date), remote:true %>
-                    <% else %>
-                        <%= link_to"編集", attendance_edit_path(attend.id, @date), remote:true %>    <!-- {class: "bi bi-pencil-fill"} -->
-                    <% end %>
+                <th><%= student.name %></th>
+                <th class="col" >
+                    
+                        <% if attend.id.nil? %>
+                            <%= link_to attendance_new_path(student.id, @date), remote:true do %>
+                                <i class="bi bi-pencil">
+                                </i>
+                            <% end %>
+                        <% else %>
+                            <%= link_to attendance_edit_path(attend.id, @date), remote:true do %>    <!-- {class: "bi bi-pencil-fill"} -->
+                                <i class="bi bi-pencil-fill">
+                                </i>
+                            <% end %>
+                        <% end %>
                 </th>
-                <td> <%= attend.hr_attend1 %></td>
-                <td><%= attend.attend1 %></td>
-                <td><%= attend.attend2 %></td>
-                <td><%= attend.attend3 %></td>
-                <td><%= attend.attend4 %></td>
-                <td><%= attend.attend5 %></td>
-                <td><%= attend.attend6 %></td>
-                <td><%= attend.attend7 %></td>
-                <td><%= attend.hr_attend2 %></td>
-                
+                <td class="<%= attend.hr_attend1 ? 'bg-danger-subtle' : '' %>"></td>
+                <td class="<%= attend.attend1 ? 'bg-danger-subtle' : '' %>"></td>
+                <td class="<%= attend.attend2 ? 'bg-danger-subtle' : '' %>"></td>
+                <td class="<%= attend.attend3 ? 'bg-danger-subtle' : '' %>"></td>
+                <td class="<%= attend.attend4 ? 'bg-danger-subtle' : '' %>"></td>
+                <td class="<%= attend.attend5 ? 'bg-danger-subtle' : '' %>"></td>
+                <td class="<%= attend.attend6 ? 'bg-danger-subtle' : '' %>"></td>
+                <% if @timetable.id.present? && @timetable.subject7.disabled? %>
+                    <td class="bg-secondary"></td>
+                <% else %>
+                    <td class="<%= attend.attend7 ? 'bg-danger-subtle' : '' %>"></td>
+                <% end %>
+                <td class="<%= attend.hr_attend2 ? 'bg-danger-subtle' : '' %>"></td>
             </tr>
         <% end %>
+        
     </tbody>
-<table>
+    
+</table>
+
+<%= link_to'戻る',"/grade_select",{class:"btn btn-outline-secondary"}%>
 
 <div id="modal-form" class="modal fade"></div>
 
-<%# <%= link_to"Edit",edit_attendance_list_path(@grade.id) %> 

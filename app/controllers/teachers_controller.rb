@@ -13,39 +13,33 @@ class TeachersController < ApplicationController
   # GET /teachers/new
   def new
     @teacher = Teacher.new
-    @room = Room.all.order(:name)
+    @rooms = Room.all.order(:name)
   end
 
   # GET /teachers/1/edit
   def edit
-    @room = Room.all.order(:name)
+    @rooms = Room.all.order(:name)
   end
 
   # POST /teachers or /teachers.json
   def create
     @teacher = Teacher.new(teacher_params)
-
-    respond_to do |format|
-      if @teacher.save
-        format.html { redirect_to @teacher, notice: "Teacher was successfully created." }
-        format.json { render :show, status: :created, location: @teacher }
-      else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @teacher.errors, status: :unprocessable_entity }
-      end
+    
+    if @teacher.save
+      redirect_to @teacher, notice: "Teacher was successfully created."
+    else
+      @rooms = Room.all.order(:name)
+      render :new, status: :unprocessable_entity
     end
   end
 
   # PATCH/PUT /teachers/1 or /teachers/1.json
   def update
-    respond_to do |format|
-      if @teacher.update(teacher_params)
-        format.html { redirect_to @teacher, notice: "Teacher was successfully updated." }
-        format.json { render :show, status: :ok, location: @teacher }
-      else
-        format.html { render :edit, status: :unprocessable_entity }
-        format.json { render json: @teacher.errors, status: :unprocessable_entity }
-      end
+    if @teacher.update(teacher_params)
+      redirect_to @teacher, notice: "Teacher was successfully updated."
+    else
+      @rooms = Room.all.order(:name)
+      render :edit, status: :unprocessable_entity
     end
   end
 

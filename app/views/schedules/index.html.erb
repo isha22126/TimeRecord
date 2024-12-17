@@ -1,9 +1,7 @@
 <p id="notice"><%= notice %></p>
-
-<h1 align="center">スケジュール</h1>
-<%= link_to'戻る',"/teacher_home",{class:"btn btn-outline-secondary"}%>
-<table cellpadding="20">
-  <thead>
+<h1 style="display:inline-block; padding: 10px; margin-bottom: 10px; border: 5px double #333333; border-radius: 10px;">不在日のスケジュール登録</h1>
+<table class="table table-bordered" cellpadding="20">
+  <thead class = "table-light">
     <tr>
       <th>日付</th>
       <th>開始</th>
@@ -15,16 +13,17 @@
   <tbody>
     <% @schedules.each do |schedule| %>
       <tr>
-        <td class = "td"><%= schedule.start.strftime("%Y-%m-%d") %></td>
-        <td class = "td"><%= schedule.start.strftime(" %H:%M" ) %></td>
-        <td class = "td"><%= schedule.finish.strftime("%m-%d %H:%M") %></td>
-        <td class = "td"><%= link_to '編集', edit_schedule_path(schedule) %></td>
-        <td class = "td"><%= link_to '削除', schedule, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td class = "td"><%= schedule.input %></td>
+        <td class = "td"><%= schedule.start.strftime(" %H:%M " ) %></td>
+        <td class = "td"><%= schedule.finish.strftime(" %H:%M ") %></td>
+        <!--<td class = "td"><%= link_to '編集', edit_schedule_path(schedule) %></td>-->
+        <td class = "td"><%= link_to '削除', schedule, method: :delete, data: { confirm: 'Are you sure?'} %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
+<h2 style = "display:flex;">
+  <%= link_to'戻る',"/teacher_home",{class:"btn btn-outline-secondary"}%>
 
-<br>
-
-<%= link_to '追加', new_schedule_path %>
+  <%= link_to '追加', new_schedule_path %>
+</h2>

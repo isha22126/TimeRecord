@@ -1,8 +1,8 @@
 
 <div>
-    <h1 align="center"><%= @teacher.name %>先生　不在時間</h1>
+    <h1 style="display:inline-block; padding: 10px; margin-bottom: 10px; border: 5px double #333333; border-radius: 10px;">
+    <%= @teacher.name %>先生　不在日</h1>
     <br>
-    <%= link_to'戻る',"/teacher_select",{class:"btn btn-outline-secondary"}%>
     <br>
     <br>
     <h2><%= "#{@date.year}年" %></h2>
@@ -15,18 +15,22 @@
         <thead>
             <tr>
                 <th>日時</th>
-                <th>開始</th>
-                <th>終了</th>
+                <th></th>
+                <th></th>
+                <th></th>
             </tr>
         </thead>
         <tbody>
         <% @schedules.each do |schedule| %>
             <tr>
-                <td><%= schedule.start.day %>日</td>
-                <td><%= schedule.start.strftime(" %H:%M" ) %></td>
-                <td><%= schedule.finish.strftime("%m-%d %H:%M") %></td>
+                <td class = "text"><%= schedule.start.day %>日</td>
+                <td class = "text"><%= schedule.start.strftime(" %H:%M" ) %></td>
+                <td>～</td>
+                <td class = "text"><%= schedule.finish.strftime(" %H:%M") %></td>
             </tr>
         <% end %>
         </tbody>
+        
     </table>
+    <%= link_to'戻る',"/teacher_select",{class:"btn btn-outline-secondary"}%>
 </div>

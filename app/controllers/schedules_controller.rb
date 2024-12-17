@@ -24,7 +24,8 @@ class SchedulesController < ApplicationController
   def create
     @schedule = Schedule.new(schedule_params)
     @schedule.teacher_id = login_teacher.id
-
+    @schedule.start = Time.zone.parse(@schedule.input.strftime("%Y-%m-%d " ) + @schedule.start.strftime("%H:%M" ))
+    @schedule.finish = Time.zone.parse(@schedule.input.strftime("%Y-%m-%d " ) + @schedule.finish.strftime("%H:%M" ))
     if @schedule.save
         redirect_to @schedule, notice: "Schedule was successfully created."
     else

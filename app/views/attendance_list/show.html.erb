@@ -1,4 +1,4 @@
-<h1><%= @grade.full_name%></h1>
+<h1 style="display:inline-block; padding: 10px; margin-bottom: 10px; border: 5px double #333333; border-radius: 10px; "><%= @grade.full_name%></h1>
 
 <table class="table table-bordered">
     <thead>
@@ -56,18 +56,17 @@
             <tr>
                 <th><%= student.name %></th>
                 <th class="col" >
-                    
-                        <% if attend.id.nil? %>
-                            <%= link_to attendance_new_path(student.id, @date), remote:true do %>
-                                <i class="bi bi-pencil">
-                                </i>
-                            <% end %>
-                        <% else %>
-                            <%= link_to attendance_edit_path(attend.id, @date), remote:true do %>    <!-- {class: "bi bi-pencil-fill"} -->
-                                <i class="bi bi-pencil-fill">
-                                </i>
-                            <% end %>
+                    <% if attend.id.nil? %>
+                        <%= link_to attendance_new_path(student.id, @date), remote:true do %>
+                            <i class="bi bi-pencil">
+                            </i>
                         <% end %>
+                    <% else %>
+                        <%= link_to attendance_edit_path(attend.id, @date), remote:true do %>    <!-- {class: "bi bi-pencil-fill"} -->
+                            <i class="bi bi-pencil-fill">
+                            </i>
+                        <% end %>
+                    <% end %>
                 </th>
                 <td class="<%= attend.hr_attend1 ? 'bg-danger-subtle' : '' %>"></td>
                 <td class="<%= attend.attend1 ? 'bg-danger-subtle' : '' %>"></td>
@@ -84,9 +83,7 @@
                 <td class="<%= attend.hr_attend2 ? 'bg-danger-subtle' : '' %>"></td>
             </tr>
         <% end %>
-        
     </tbody>
-    
 </table>
 
 <%= link_to'戻る',"/grade_select",{class:"btn btn-outline-secondary"}%>

@@ -1,9 +1,9 @@
 <p id="notice"><%= notice %></p>
 
-<h1>生徒</h1>
+<h1 style="display:inline-block; padding: 10px; margin-bottom: 10px; border: 5px double #333333; border-radius: 10px;">生徒</h1>
 
 <table class="table table-bordered">
-  <thead>
+  <thead class="table-light">
     <tr>
       <th>名前</th>
       <th>ふりがな</th>
@@ -31,6 +31,6 @@
 </table>
 
 <br>
-<%= link_to '戻る', admin_home_path %>
+<%= link_to '戻る', admin_home_path ,{class:"btn btn-outline-secondary"}%>
 <br>
-<%= link_to '新規作成', new_student_path %>
+<%= link_to '新規作成', new_student_path ,{class:"btn btn-outline-secondary"}%>

@@ -8,8 +8,7 @@
     <h2><%= "#{@date.year}年" %></h2>
     <h2><%= link_to "◀", teacher_schedule_path(@teacher.id, @date.last_month) %>
         <%= "#{@date.mon}月" %>
-        <%= link_to "▶", teacher_schedule_path(@teacher.id, @date.next_month) %>
-    </h2>
+    <%= link_to "▶", teacher_schedule_path(@teacher.id, @date.next_month) %></h2>
     <br>
     <table class="table">
         <thead>
@@ -25,7 +24,7 @@
             <tr>
                 <td class = "text"><%= schedule.start.day %>日</td>
                 <td class = "text"><%= schedule.start.strftime(" %H:%M" ) %></td>
-                <td>～</td>
+                <td class = "text">～</td>
                 <td class = "text"><%= schedule.finish.strftime(" %H:%M") %></td>
             </tr>
         <% end %>

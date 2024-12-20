@@ -16,8 +16,8 @@
 <tbody>
 <% @teachers.each do |teacher|%>
 <tr>
-    <td style="font-size:30px;"><%= link_to teacher.name, teacher_schedule_path(teacher.id, Date.today) %></td>
-    <td style="font-size:30px;"><%= teacher.room.name %></td>
+    <td class = "td"><%= link_to teacher.name, teacher_schedule_path(teacher.id, Date.today) %></td>
+    <td class = "td"><%= teacher.room.name %></td>
 </tr>
 <%end%>
 </tbody>

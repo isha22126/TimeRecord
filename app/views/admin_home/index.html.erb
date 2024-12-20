@@ -1,15 +1,23 @@
 <style>
-    .{
-       
-      }  
-    }
+@import (
+  "https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap"
+);
+.form-signin{
+     position: relative;
+  width: 100%;
+  min-height: 100vh;
+  background: url("https://jajaaan.co.jp/wp-content/uploads/2020/01/inside-sales.jpg")
+    center / cover;
+}
+ 
 </style>
 
 <div class="text-center">
+<div action="" method="post" name="Login_Form" class="form-signin">
+    <h1>管理者ホーム</h1>
 
-<h1>管理者ホーム</h1>
-<h2 class="teacher-font"><%= link_to "先生",teachers_path ,{class:"btn btn-outline-primary btn-lg fs-1"}%></h2>
-<h2 class="student-font"><%= link_to "生徒",students_path ,{class:"btn btn-outline-primary btn-lg fs-1"}%></h2>
-
+    <h2 class="teacher-font"><%= link_to "先生",teachers_path ,{class:"btn btn-outline-primary btn-lg fs-1"}%></h2>
+    <h2 class="student-font"><%= link_to "生徒",students_path ,{class:"btn btn-outline-primary btn-lg fs-1"}%></h2>
+</div>
 
 </div>

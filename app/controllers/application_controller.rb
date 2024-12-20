@@ -1,4 +1,5 @@
 class ApplicationController < ActionController::Base
+  helper_method :login_teacher
 
   def login_teacher
     Teacher.find(session[:login_teacher_id])

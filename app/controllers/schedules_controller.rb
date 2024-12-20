@@ -27,7 +27,7 @@ class SchedulesController < ApplicationController
     @schedule.start = Time.zone.parse(@schedule.input.strftime("%Y-%m-%d " ) + @schedule.start.strftime("%H:%M" ))
     @schedule.finish = Time.zone.parse(@schedule.input.strftime("%Y-%m-%d " ) + @schedule.finish.strftime("%H:%M" ))
     if @schedule.save
-        redirect_to @schedule, notice: "Schedule was successfully created."
+        redirect_to @schedule, notice: "作成に成功しました。"
     else
       render :new, status: :unprocessable_entity 
     end
@@ -49,7 +49,7 @@ class SchedulesController < ApplicationController
     @schedule.destroy
 
     respond_to do |format|
-      format.html { redirect_to schedules_path, status: :see_other, notice: "Schedule was successfully destroyed." }
+      format.html { redirect_to schedules_path, status: :see_other, notice: "削除に成功しました。" }
       format.json { head :no_content }
     end
   end

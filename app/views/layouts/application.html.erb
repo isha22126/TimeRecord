@@ -15,13 +15,15 @@
 
 
   <body>
-    <% unless current_page?(login_path) %>
+    <% unless current_page?(login_path) || current_page?(logout_path) %>
       <div class="row">
         <div align="right">
           <span class="fs-1">
-            <%= login_teacher.name %>
+            <% if login_teacher.present? %>
+              <%= login_teacher.name %>
+            <% end %>
           </span>
-          <%= link_to "ログアウト",login_path ,{class:"btn btn-outline-danger fs-1"}%>
+          <%= link_to "ログアウト",logout_path ,{class:"btn btn-outline-danger fs-1"}%>
         </div>
         
 

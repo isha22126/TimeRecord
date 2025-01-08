@@ -12,8 +12,9 @@ Rails.application.routes.draw do
   # ログイン
   get '/', to: 'login#index', as: 'login'
   post 'login', to: 'login#create', as: :login_create
+  get 'logout', to: 'login#logout', as: :logout
 
-  # 管理者機能
+  # 管理者機能1
   get 'admin_home', to: 'admin_home#index', as: 'admin_home'
 
   # 出欠機能

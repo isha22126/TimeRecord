@@ -24,3 +24,12 @@ a.btn-primary:hover{
 a.btn-primary:visited{
     color:#fff
 }
+a.btn-outline-danger{
+    color:#6c6c6c
+}
+a.btn-outline-danger:hover{
+    color:#6c6c6c
+}
+a.btn-outline-danger:vistied{
+    color:#6c6c6c
+}

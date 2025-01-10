@@ -9,8 +9,6 @@
   max-width: 420px;
   padding: 30px 38px 66px;
   margin: 0 auto;
-  background-color: #eee;
-  border: 3px dotted rgba(0,0,0,0.1);  
   }
 
 .form-signin-heading {
@@ -25,20 +23,32 @@
   padding: 10px;
 }
 
-@import url('https://kinsta.com/jp/blog/cursive-fonts/#1-dancing-script');
+
 .form-signin-heading{
-  font-family: 'Dancing Script', cursive;
-  font-size: 30px
+  font-family: "Caveat", serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 100px
 }
 
 .mail-font{
-  font-family:"游明朝"
+  font-family:"Tsukimi Rounded", serif;
 }
+
 .pw-font{
-  font-family:"游明朝"
+  font-family:"Tsukimi Rounded", serif;
+}
+
+.form-2{
+     position: relative;
+  width: 100%;
+  min-height: 100vh;
+  background: url("https://png.pngtree.com/background/20240412/original/pngtree-modern-office-desk-of-a-creative-designer-with-an-empty-laptop-picture-image_8464554.jpg")
+    center / cover;
 }
 </style>
 
+<body class="form-2">
 <%= form_with url: login_create_path, model: @login do |form| %>
 
 
@@ -46,7 +56,7 @@
           <div class = "container">
           <div class="wrapper">
           <div action="" method="post" name="Login_Form" class="form-signin">  
-          <div class="form-signin-heading">Time record</div>
+          <div class="form-signin-heading">Time Record</div>
             <h2 class="mail-font"><%= form.text_field :mail ,{placeholder:"メールアドレス"}%></h2> <br>
 
             <h2 class="pw-font"><%= form.text_field :pw ,{placeholder:"パスワード"}%></h2><br>
@@ -58,3 +68,4 @@
 
 </div>
 <% end %>
+</body>

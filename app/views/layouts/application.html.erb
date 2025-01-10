@@ -18,11 +18,12 @@
     <% unless current_page?(login_path) || current_page?(logout_path) %>
       <div class="row">
         <div align="right">
-          <span class="fs-1">
             <% if login_teacher.present? %>
-              <%= login_teacher.name %>
+              <span class="btn btn-outline-danger fs-2" >
+                <%= login_teacher.name %>
+              </span>  
             <% end %>
-          </span>
+          
           <%= link_to "ログアウト",logout_path ,{class:"btn btn-outline-danger fs-2"}%>
         </div>
         

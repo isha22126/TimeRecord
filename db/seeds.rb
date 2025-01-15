@@ -22,15 +22,15 @@ r4 = Room.create(name: "生徒指導室")
 r5 = Room.create(name: "保健室")
 
 # 教員
-t1 = Teacher.create(name: "吉田", mail: "yoshida@xxx.com",   pw: "yoshida",   kana: "よしだ",   room_id: r3.id)
-t2 = Teacher.create(name: "大野", mail: "oono@xxx.com",      pw: "oono",      kana: "おおの",   room_id: r1.id)
-t3 = Teacher.create(name: "竹崎", mail: "takesaki@xxx.com",  pw: "takesaki",  kana: "たけさき", room_id: r3.id)
-t4 = Teacher.create(name: "永田", mail: "nagata@xxx.com",    pw: "nagata",    kana: "ながた",   room_id: r2.id)
-t5 = Teacher.create(name: "安食", mail: "aziki@xxx.com",     pw: "aziki",     kana: "あじき",   room_id: r3.id)
-t6 = Teacher.create(name: "馬庭", mail: "maniwa@xxx.com",    pw: "maniwa",    kana: "まにわ",   room_id: r5.id)
-t7 = Teacher.create(name: "松本", mail: "matsumoto@xxx.com", pw: "matsumoto", kana: "まつもと", room_id: r4.id)
-t8 = Teacher.create(name: "周藤", mail: "sutou@xxx.com",     pw: "sutou",     kana: "すとう",   room_id: r4.id)
-t9 = Teacher.create(name: "松田", mail: "matsuda@xxx.com",   pw: "matsuda",   kana: "まつだ",   room_id: r4.id)
+t1 = Teacher.create(name: "吉田 利幸", mail: "yoshida@xxx.com",   pw: "yoshida",   kana: "よしだ としゆき",   room_id: r3.id)
+t2 = Teacher.create(name: "大野 陽太", mail: "oono@xxx.com",      pw: "oono",      kana: "おおの ようた",   room_id: r1.id)
+t3 = Teacher.create(name: "竹崎 紀子", mail: "takesaki@xxx.com",  pw: "takesaki",  kana: "たけさき のりこ", room_id: r3.id)
+t4 = Teacher.create(name: "永田 亮", mail: "nagata@xxx.com",    pw: "nagata",    kana: "ながた りょう",   room_id: r2.id)
+t5 = Teacher.create(name: "安食 敏行", mail: "aziki@xxx.com",     pw: "aziki",     kana: "あじき としゆき",   room_id: r3.id)
+t6 = Teacher.create(name: "青木 智篤", mail: "aoki@xxx.com",    pw: "aoki",    kana: "あおき ともあつ",   room_id: r5.id)
+t7 = Teacher.create(name: "松本 篤士", mail: "matsumoto@xxx.com", pw: "matsumoto", kana: "まつもと あつし", room_id: r4.id)
+t8 = Teacher.create(name: "周藤 友子", mail: "sutou@xxx.com",     pw: "sutou",     kana: "すとう ともこ",   room_id: r4.id)
+t9 = Teacher.create(name: "松田 有平", mail: "matsuda@xxx.com",   pw: "matsuda",   kana: "まつだ ゆうへい",   room_id: r4.id)
 
 
 # 学年・クラス
@@ -48,23 +48,38 @@ c33 = Grade.create(grade_name: "3", class_name: "3")
 c34 = Grade.create(grade_name: "3", class_name: "4")
 
 # 生徒
-s1 = Student.create(name: "安達", mail: "isha22121@xxx.com", pw: "adachi",   kana: "あだち",   grade_id: c34.id)
-s2 = Student.create(name: "石田", mail: "isha22122@xxx.com", pw: "ishida",   kana: "いしだ",   grade_id: c34.id)
-s3 = Student.create(name: "和泉", mail: "isha22123@xxx.com", pw: "izumi",    kana: "いずみ",   grade_id: c34.id)
-s4 = Student.create(name: "伊藤", mail: "isha22124@xxx.com", pw: "itou",     kana: "いとう",   grade_id: c11.id)
-s5 = Student.create(name: "井上", mail: "isha22125@xxx.com", pw: "inoue",    kana: "いのうえ", grade_id: c11.id)
-s6 = Student.create(name: "岩成", mail: "isha22126@xxx.com", pw: "iwanari",  kana: "いわなり", grade_id: c11.id)
-s7 = Student.create(name: "江角", mail: "isha22127@xxx.com", pw: "esumi",    kana: "えすみ",   grade_id: c34.id)
+s1 = Student.create(name: "安達 康浩", mail: "isha22121@xxx.com", pw: "adachi",   kana: "あだちやすひろ",   grade_id: c34.id)
+s2 = Student.create(name: "石田 健人", mail: "isha22122@xxx.com", pw: "ishida",   kana: "いしだけんと",   grade_id: c34.id)
+s3 = Student.create(name: "和泉 海音", mail: "isha22123@xxx.com", pw: "izumi",    kana: "いずみかいと",   grade_id: c34.id)
+s4 = Student.create(name: "伊藤 颯人", mail: "isha22124@xxx.com", pw: "itou",     kana: "いとうはやと",   grade_id: c11.id)
+s5 = Student.create(name: "井上 優弥", mail: "isha22125@xxx.com", pw: "inoue",    kana: "いのうえゆうや", grade_id: c11.id)
+s6 = Student.create(name: "岩成 歩", mail: "isha22126@xxx.com", pw: "iwanari",  kana: "いわなりあゆむ", grade_id: c11.id)
+s7 = Student.create(name: "江角 花音", mail: "isha22127@xxx.com", pw: "esumi",    kana: "えすみかのん",   grade_id: c34.id)
 
 # 教科
+k0 = Subject.create(name: "-")
+k16 = Subject.create(name: "現国")
+k10 = Subject.create(name: "言文")
 k1 = Subject.create(name: "歴史")
 k2 = Subject.create(name: "英語")
 k3 = Subject.create(name: "ネ管")
 k4 = Subject.create(name: "科人")
-k5 = Subject.create(name: "論国")
+k5 = Subject.create(name: "表現")
 k6 = Subject.create(name: "体育")
 k7 = Subject.create(name: "家総")
-k8 = Subject.create(name: "-")
+k8 = Subject.create(name: "簿記")
+k9 = Subject.create(name: "ビ基")
+
+k11 = Subject.create(name: "数学")
+k12 = Subject.create(name: "プロ")
+k13 = Subject.create(name: "α")
+k14 = Subject.create(name: "β")
+k15 = Subject.create(name: "保険")
+
+k17 = Subject.create(name: "地理")
+k18 = Subject.create(name: "公共")
+k19 = Subject.create(name: "生物")
+
 
 # 時間割
 today = Date.today
@@ -74,7 +89,7 @@ tt1 = Timetable.create(input: today, grade_id: c34.id,
   subject_id2: k2.id, teacher_id2: t3.id,   # 英語、竹崎先生
   subject_id3: k3.id, teacher_id3: t4.id,   # ネ管、永田先生
   subject_id4: k4.id, teacher_id4: t5.id,   # 科人、安食先生
-  subject_id5: k5.id, teacher_id5: t6.id,   # 論国、馬庭先生
+  subject_id5: k5.id, teacher_id5: t6.id,   # 表現、青木先生
   subject_id6: k6.id, teacher_id6: t7.id,   # 体育、松本先生 
   subject_id7: k7.id, teacher_id7: t8.id,   # 家総、周藤先生
   hr_teacher_id1: t1.id, hr_teacher_id2: t9.id
